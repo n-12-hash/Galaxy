@@ -80,14 +80,16 @@ public class Move : MonoBehaviour
 
 		if (UnityEngine.Input.GetKeyDown(KeyCode.JoystickButton1))
 		{
-			animator.SetBool("Roll_Anim", true);
 			if (velocity.magnitude > 0.1f)
 			{
+
+				animator.SetBool("Roll_Anim", true);
 				float moveZ = UnityEngine.Input.GetAxis("Horizontal") * DashSpeed * Time.deltaTime; // 水平方向の移動
 				transform.position += new Vector3(0, 0, moveZ); // オブジェクトの位置を更新
 			}
 			else if (velocity.magnitude < -0.1f)
 			{
+				animator.SetBool("Roll_Anim", true);
 				float moveZ = UnityEngine.Input.GetAxis("Horizontal") * DashSpeed * Time.deltaTime; // 水平方向の移動
 				transform.position += new Vector3(0, 0, moveZ); // オブジェクトの位置を更新
 			}
@@ -110,7 +112,7 @@ public class Move : MonoBehaviour
 		}
 
 
-		if (UnityEngine.Input.GetKeyDown(KeyCode.JoystickButton3) && jumpCount <= 2)
+		if (UnityEngine.Input.GetKeyDown(KeyCode.JoystickButton3) && jumpCount <= 2 )   
 		{
 			//Rigidbodyに上方向にJumpPowerの力を加え
 			rb.AddForce(transform.up * jumpPower);
