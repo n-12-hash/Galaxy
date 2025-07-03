@@ -80,19 +80,11 @@ public class Move : MonoBehaviour
 
 		if (UnityEngine.Input.GetKeyDown(KeyCode.JoystickButton1))
 		{
-			if (velocity.magnitude > 0.1f)
-			{
 
-				animator.SetBool("Roll_Anim", true);
-				float moveZ = UnityEngine.Input.GetAxis("Horizontal") * DashSpeed * Time.deltaTime; // 水平方向の移動
-				transform.position += new Vector3(0, 0, moveZ); // オブジェクトの位置を更新
-			}
-			else if (velocity.magnitude < -0.1f)
-			{
-				animator.SetBool("Roll_Anim", true);
-				float moveZ = UnityEngine.Input.GetAxis("Horizontal") * DashSpeed * Time.deltaTime; // 水平方向の移動
-				transform.position += new Vector3(0, 0, moveZ); // オブジェクトの位置を更新
-			}
+			animator.SetBool("Roll_Anim", true);
+			float moveZ = UnityEngine.Input.GetAxis("Horizontal") * DashSpeed * Time.deltaTime; // 水平方向の移動
+			transform.position += new Vector3(0, 0, moveZ); // オブジェクトの位置を更新
+
 		}
 
 		else
