@@ -7,26 +7,33 @@ using TMPro;
 
 public class CameraMove : MonoBehaviour
 {
-	[Header("移動速度"), SerializeField]
-	public float moveSpeed = 30f;
-	// アニメーション
-	private Animator animator;
-	// Start is called before the first frame update
+	private GameObject player;   //プレイヤー情報格納用
+	private Vector3 offset;      //相対距離取得用
+	int afterglowTime;
+
+	// Use this for initialization
 	void Start()
-    {
+	{
+
+		//プレイヤーの情報を取得
+		this.player = GameObject.Find("robotSphere");
+
+		// MainCamera(自分自身)とplayerとの相対距離を求める
+		//offset = transform.position - player.transform.position;
 
 	}
 
-    // Update is called once per frame
-    void Update()
-    {
+	// Update is called once per frame
+	void Update()
+	{
+		transform.position += player.GetComponent<Move>().Value;
 
-		//if (Pause.isPaused) return; // ポーズ中は何もしない
-		float moveZ = Input.GetAxis("Horizontal") * moveSpeed * Time.deltaTime; // 水平方向の移動
-		//float moveZ = Input.GetAxis("Vertical") * moveSpeed * Time.deltaTime;   // 垂直方向の移動
+		//新しいトランスフォームの値を代入する
+		//transform.position = player.transform.position + offset;
 
-		transform.position += new Vector3(0, 0, moveZ); // オブジェクトの位置を更新
-
-
+		//プレイヤーの向きと同じようにカメラの向きを変更する
+		//transform.rotation = player.transform.rotation;
 	}
+
+
 }

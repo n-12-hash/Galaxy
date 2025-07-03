@@ -10,11 +10,6 @@ using UnityEngine.Windows;
 
 public class Move : MonoBehaviour
 {
-	/*public string leftkey;      // 左キー
-	public string rightkey;     // 右キー
-	public string jumpkey;      // ジャンプキー	
-	public string shootkey;     // 銃キー
-	public string Dashkey;      // ダッシュキー	*/
 
 	private Rigidbody rb;
 	private Transform tf;
@@ -24,10 +19,19 @@ public class Move : MonoBehaviour
 	private float horizontal = 0;
 	private float vertical = 0;
 	private Vector3 velocity;
-	[Header("移動速度"), SerializeField]
-	public float moveSpeed = 30f;
+	//[Header("移動速度"), SerializeField]
+	private float moveSpeed = 10f;
+	private float DashSpeed = 30f;
+	public float jumpPower;
+	bool isGround = false;      //地面接地フラグを宣言
+	int jumpCount = 0;     //ジャンプの回数をカウントする変数を宣言
+	Vector3 prevPos;
+	int afterglowTime;
 
-
+	public Vector3 Value
+	{
+		get => transform.position - prevPos;
+	}
 
 	// Start is called before the first frame update
 	void Start()
@@ -40,25 +44,32 @@ public class Move : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-		// if (Pause.isPaused) return; // ポーズ中は何もしない
-		//float moveZ = UnityEngine.Input.GetAxis("Horizontal") * moveSpeed * Time.deltaTime; // 水平方向の移動
-		//transform.position += new Vector3(0, 0, moveZ); // オブジェクトの位置を更新
+		//if (Pause.isPaused) return; // ポーズ中は何もしない
+		//if (animator.SetBool("Start_Anim", true).isPaused) return; // ポーズ中は何もしない
+		prevPos = transform.position;
 
 		horizontal = UnityEngine.Input.GetAxis("Horizontal");
 		velocity = new Vector3(0, 0, horizontal).normalized;
-		rb.velocity = velocity * moveSpeed;
-		if (horizontal == 0)
-		{			
+		/*
+		rb.velocity =
+			Vector3.Scale(rb.velocity, new Vector3(0, 1, 0)) +
+			Vector3.Scale(velocity * moveSpeed, new Vector3(1, 0, 1));
+		*/
+		if (velocity.magnitude > 0.1f)
+		{
+			animator.SetBool("Walk_Anim", true);
+			float moveZ = UnityEngine.Input.GetAxis("Horizontal") * moveSpeed * Time.deltaTime; // 水平方向の移動
+			transform.position += new Vector3(0, 0, moveZ); // オブジェクトの位置を更新
+		}
+		else if (horizontal < -0.1f)
+		{
+			animator.SetBool("Walk_Anim", true);
+			float moveZ = UnityEngine.Input.GetAxis("Horizontal") * moveSpeed * Time.deltaTime; // 水平方向の移動
+			transform.position += new Vector3(0, 0, moveZ); // オブジェクトの位置を更新
+		}
+		else
+		{
 			animator.SetBool("Walk_Anim", false);
-
-		}
-		else if (horizontal > 0.1f) 
-		{
-			animator.SetBool("Walk_Anim", true);
-		}
-		else 
-		{
-			animator.SetBool("Walk_Anim", true);
 		}
 
 
@@ -66,7 +77,79 @@ public class Move : MonoBehaviour
 		{
 			tf.rotation = Quaternion.LookRotation(velocity);
 		}
-			//Input.GetKey();
 
+		if (UnityEngine.Input.GetKeyDown(KeyCode.JoystickButton1))
+		{
+			animator.SetBool("Roll_Anim", true);
+			if (velocity.magnitude > 0.1f)
+			{
+				float moveZ = UnityEngine.Input.GetAxis("Horizontal") * DashSpeed * Time.deltaTime; // 水平方向の移動
+				transform.position += new Vector3(0, 0, moveZ); // オブジェクトの位置を更新
+			}
+			else if (velocity.magnitude < -0.1f)
+			{
+				float moveZ = UnityEngine.Input.GetAxis("Horizontal") * DashSpeed * Time.deltaTime; // 水平方向の移動
+				transform.position += new Vector3(0, 0, moveZ); // オブジェクトの位置を更新
+			}
+		}
+
+		else
+		{
+			animator.SetBool("Roll_Anim", false);
+		}
+
+
+		if (UnityEngine.Input.GetKey(KeyCode.JoystickButton2))
+		{
+			animator.SetBool("Open_Anim", false);
+		}
+
+		else
+		{
+			animator.SetBool("Open_Anim", true);
+		}
+
+
+		if (UnityEngine.Input.GetKeyDown(KeyCode.JoystickButton3) && jumpCount <= 2)
+		{
+			//Rigidbodyに上方向にJumpPowerの力を加え
+			rb.AddForce(transform.up * jumpPower);
+			jumpCount++;    //jumpCount をインクリメント
+		}
+	}
+
+	private void FixedUpdate()
+	{
+
+		afterglowTime--;
+		if (GameObject.Find("robotSphere") && - 15 > gameObject.transform.position.y)
+		{
+
+			SceneManager.LoadScene(SceneManager.GetActiveScene().name);
+
+
+		}
+
+
+	}
+
+	//当たり判定
+	void OnCollisionEnter(Collision collision)
+	{
+		//当たった相手の名前が「Plane」なら
+		if (collision.gameObject.tag == "Plane")
+		{
+			jumpCount = 0;
+		}
+	}
+
+	//脱出判定
+	void OnCollisionExit(Collision collision)
+	{
+		//脱出した相手の名前が「Plane」なら
+		if (collision.gameObject.tag == "Plane")
+		{
+			isGround = false;     //isGround　を false に
+		}
 	}
 }
