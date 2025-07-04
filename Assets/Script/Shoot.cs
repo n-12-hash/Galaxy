@@ -4,32 +4,45 @@ using UnityEngine;
 
 public class Shoot : MonoBehaviour
 {
-	[SerializeField] GameObject sphere;
-	[SerializeField] GameObject childObj;
+
+	public float bulletSpeed; //íeÇÃë¨ìx
+	public GameObject PistolBullet; // íe
+	public float fireRate = 0.5f;   // î≠éÀä‘äu
 	private float speed = 300;
+
+
+	private Collider objectCollider;
+	private Rigidbody rb;
 
 	void Start()
 	{
-		childObj = transform.GetChild(0).gameObject;
+		objectCollider = GetComponent<SphereCollider>();
+		objectCollider.isTrigger = true; //TriggerÇ∆ÇµÇƒàµÇ§
+		rb = GetComponent<Rigidbody>();
+		rb.useGravity = false; //èdóÕÇñ≥å¯Ç…Ç∑ÇÈ
 	}
 
 	void Update()
 	{
-		if (Input.GetKeyDown("space"))
+		if (Input.GetKeyDown(KeyCode.JoystickButton4) || Input.GetKeyDown(KeyCode.JoystickButton5) )
 		{
-			GameObject ball = (GameObject)Instantiate(sphere, childObj.transform.position, Quaternion.identity);
-			Rigidbody ballRigidbody = ball.GetComponent<Rigidbody>();
-			ballRigidbody.AddForce(transform.forward * speed);
+			//íeÇê∂ê¨
+			GameObject Bullet = Instantiate(PistolBullet, this.transform.position, Quaternion.identity);
+			Rigidbody bulletRigidbody = PistolBullet.GetComponent<Rigidbody>();
+
+			//3ïbå„Ç…íeÇè¡Ç∑	
+			Destroy(Bullet, 3);
+
+			// íeÇ…ë¨ìxÇó^Ç¶ÇÈ
+			Rigidbody rb = Bullet.GetComponent<Rigidbody>();
+			if (rb != null)
+			{
+				rb.velocity = this.transform.forward * bulletSpeed;
+			}
+
 		}
 
-		if (Input.GetKey("right"))
-		{
-			transform.Rotate(0, 2, 0);
-		}
-
-		if (Input.GetKey("left"))
-		{
-			transform.Rotate(0, -2, 0);
-		}
 	}
+
+
 }
