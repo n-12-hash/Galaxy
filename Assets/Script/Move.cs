@@ -21,7 +21,7 @@ public class Move : MonoBehaviour
 	private Vector3 velocity;
 	//[Header("移動速度"), SerializeField]
 	private float moveSpeed = 10f;
-	private float DashSpeed = 30f;
+	private float DashSpeed = 100f;
 	public float jumpPower;
 	bool isGround = false;      //地面接地フラグを宣言
 	int jumpCount = 0;     //ジャンプの回数をカウントする変数を宣言
@@ -82,8 +82,17 @@ public class Move : MonoBehaviour
 		{
 
 			animator.SetBool("Roll_Anim", true);
-			float moveZ = UnityEngine.Input.GetAxis("Horizontal") * DashSpeed * Time.deltaTime; // 水平方向の移動
-			transform.position += new Vector3(0, 0, moveZ); // オブジェクトの位置を更新
+			if (velocity.magnitude > 0.1f)
+			{
+				float moveZ = UnityEngine.Input.GetAxis("Horizontal") * DashSpeed * Time.deltaTime; // 水平方向の移動
+				transform.position += new Vector3(0, 0, moveZ); // オブジェクトの位置を更新
+			}
+
+			else
+			{
+				float moveZ = UnityEngine.Input.GetAxis("Horizontal") * DashSpeed * Time.deltaTime; // 水平方向の移動
+				transform.position += new Vector3(0, 0, moveZ); // オブジェクトの位置を更新
+			}
 
 		}
 

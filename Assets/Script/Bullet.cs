@@ -4,6 +4,8 @@ using UnityEngine;
 
 public class Bullet : MonoBehaviour
 {
+	[SerializeField] GameObject explosionPrefab;    //”š”­‚ÌPrefab‚ğéŒ¾
+	[SerializeField] AudioClip se;                  // Œø‰Ê‰¹
 	void OnTriggerEnter(Collider collision)
 	{
 
@@ -11,6 +13,10 @@ public class Bullet : MonoBehaviour
 		{
 			Destroy(collision.gameObject); //Õ“Ë‚µ‚½‘Šè‚ğÁ‚·
 			Destroy(gameObject); //’e‚ğÁ‚·
+			AudioSource.PlayClipAtPoint(se, transform.position);
+			GameObject explosion = Instantiate(explosionPrefab,
+			  transform.position, Quaternion.identity);
+			Destroy(explosion, 2.0f);       //2•bŒã‚Éexplosion‚ğíœ
 		}
 	}
 }
