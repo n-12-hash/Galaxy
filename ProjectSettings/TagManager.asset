@@ -6,6 +6,7 @@ TagManager:
   tags:
   - Plane
   - Monster
+  - Bullet
   layers:
   - Default
   - TransparentFX

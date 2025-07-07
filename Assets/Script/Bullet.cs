@@ -1,11 +1,25 @@
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
-
+[RequireComponent(typeof(SphereCollider))]
+[RequireComponent(typeof(Rigidbody))]
 public class Bullet : MonoBehaviour
 {
 	[SerializeField] GameObject explosionPrefab;    //”š”­‚ÌPrefab‚ğéŒ¾
 	[SerializeField] AudioClip se;                  // Œø‰Ê‰¹
+
+	private Collider objectCollider;
+	private Rigidbody rb;
+
+	void Start()
+	{
+		objectCollider = GetComponent<SphereCollider>();
+		objectCollider.isTrigger = true; //Trigger‚Æ‚µ‚Äˆµ‚¤
+		rb = GetComponent<Rigidbody>();
+		rb.useGravity = false; //d—Í‚ğ–³Œø‚É‚·‚é
+	}
+
+
 	void OnTriggerEnter(Collider collision)
 	{
 
@@ -18,5 +32,7 @@ public class Bullet : MonoBehaviour
 			  transform.position, Quaternion.identity);
 			Destroy(explosion, 2.0f);       //2•bŒã‚Éexplosion‚ğíœ
 		}
+
+
 	}
 }
