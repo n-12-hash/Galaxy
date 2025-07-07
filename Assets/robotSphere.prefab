@@ -2848,7 +2848,7 @@ Rigidbody:
   serializedVersion: 4
   m_Mass: 1
   m_Drag: 0
-  m_AngularDrag: 0.05
+  m_AngularDrag: 10
   m_CenterOfMass: {x: 0, y: 0, z: 0}
   m_InertiaTensor: {x: 1, y: 1, z: 1}
   m_InertiaRotation: {x: 0, y: 0, z: 0, w: 1}
@@ -4172,9 +4172,9 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 147996f29812c724082fef9154008e78, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  bulletSpeed: 100
-  PistolBullet: {fileID: 18429820303885697, guid: 483cef128d6c53540a64e2811acafcbf, type: 3}
-  fireRate: 1
+  PistolBullet: {fileID: 2503511347906627806, guid: 9674a56e3c262c444a1ea7693c3351ed, type: 3}
+  fireRate: 0.05
+  bulletSpeed: 700
 --- !u!1 &5257243784163388650
 GameObject:
   m_ObjectHideFlags: 0
@@ -4304,9 +4304,9 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 147996f29812c724082fef9154008e78, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  bulletSpeed: 100
   PistolBullet: {fileID: 18429820303885697, guid: 483cef128d6c53540a64e2811acafcbf, type: 3}
   fireRate: 0.5
+  bulletSpeed: 100
 --- !u!135 &851690410862556356
 SphereCollider:
   m_ObjectHideFlags: 0
