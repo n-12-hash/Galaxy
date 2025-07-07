@@ -35,10 +35,10 @@ public class hpReduce : MonoBehaviour
 
 	void OnTriggerExit(Collider collision)
 	{
-		if (collision.gameObject.tag == "Bullet")
+		/*if (collision.gameObject.tag == "Bullet")
 		{
 			hpSlider.value -= 10;
-		}
+		}*/
 
 	}
 
@@ -51,6 +51,11 @@ public class hpReduce : MonoBehaviour
 		UpdateHPValue();
 		void OnTriggerEnter(Collider collision)
 		{
+			if (collision.gameObject.tag == "Bullet")
+			{
+				hpSlider.value -= 10;
+			}
+
 			if (hp <= 0 && (collision.gameObject.CompareTag("Bullet")))  
 			{
 				//　HP表示用UIを非表示にする
