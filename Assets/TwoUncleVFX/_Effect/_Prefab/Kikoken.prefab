@@ -12,7 +12,6 @@ GameObject:
   - component: {fileID: 5282397951097381086}
   - component: {fileID: 3000150273428255377}
   - component: {fileID: 1379584617326716973}
-  - component: {fileID: 7655933716134516628}
   m_Layer: 0
   m_Name: Kikoken
   m_TagString: Untagged
@@ -258,21 +257,3 @@ TrailRenderer:
   m_Autodestruct: 0
   m_Emitting: 1
   m_ApplyActiveColorSpace: 1
---- !u!114 &7655933716134516628
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 7700642936372213891}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 411cffdc8f64b864da5d25a5a22ed2c0, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  rotationSpeed: 100
-  movementSpeed: -10
-  delayTime: 0
-  time: 1
-  towardType: 1
-  maxDistance: 100
