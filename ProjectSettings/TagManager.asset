@@ -7,11 +7,12 @@ TagManager:
   - Plane
   - Monster
   - Bullet
+  - Enemy
   layers:
   - Default
   - TransparentFX
   - Ignore Raycast
-  - 
+  - Enemy
   - Water
   - UI
   - 

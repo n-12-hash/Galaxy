@@ -6,7 +6,7 @@ using UnityEngine.UI;
 public class hpReduce : MonoBehaviour
 {
 	//爆発のPrefabを宣言
-	[SerializeField] GameObject explosionPrefab; 
+	[SerializeField] GameObject explosionPrefab;
 	[SerializeField] AudioClip se;
 	//　敵のMaxHP
 	[SerializeField]
@@ -17,22 +17,20 @@ public class hpReduce : MonoBehaviour
 	//　敵の攻撃力
 	[SerializeField]
 	private int attackPower = 1;
-	private Monster enemy;
 	//　HP表示用UI
 	[SerializeField]
 	private GameObject HPUI;
 	//　HP表示用スライダー
-	public Slider hpSlider;
+	private Slider hpSlider;
 
 	// Start is called before the first frame update
 	void Start()
 	{
-		enemy = GetComponent<Monster>();
+		//hpSlider.value = 100;
 		hp = maxHp;
 		hpSlider = HPUI.transform.Find("HPBar").GetComponent<Slider>();
 		hpSlider.value = 1f;
 	}
-
 
 
 	public void SetHp(int hp)
@@ -40,54 +38,34 @@ public class hpReduce : MonoBehaviour
 		this.hp = hp;
 
 		//　HP表示用UIのアップデート
-		UpdateHPValue();
-
-
-		void OnTriggerExit(Collider collision)
+		/*UpdateHPValue();
+		if (hp <= 0)
 		{
-
-			if (collision.gameObject.tag == "Bullet")
-			{
-				hpSlider.value -= 10;
-			}
+			//　HP表示用UIを非表示にする
+			HideStatusUI();
+		}*/
+	}
+	void OnTriggerExit(Collider Collision)
+	{
+		if (Collision.gameObject.tag == "Bullet"){
+			hpSlider.value -= 10;
+			Debug.Log("当たった");
 		}
 
-		void OnTriggerEnter(Collider collision)
+		if (hp <= 0)
 		{
-
-
-			if (hp <= 0 && (collision.gameObject.CompareTag("Bullet")))  
-			{
-				//　HP表示用UIを非表示にする
-				HideStatusUI();
-				Destroy(collision.gameObject); //このオブジェクトを消す
-				AudioSource.PlayClipAtPoint(se, transform.position);
-				GameObject explosion = Instantiate(explosionPrefab,
-				  transform.position, Quaternion.identity);
-				Destroy(explosion, 2.0f);       //2秒後にexplosionを削除
-			}
+			Destroy(gameObject); //このオブジェクトを消す
+			AudioSource.PlayClipAtPoint(se, transform.position);
+			GameObject explosion = Instantiate(explosionPrefab,
+			  transform.position, Quaternion.identity);
+			Destroy(explosion, 2.0f);       //2秒後にexplosionを削除
 		}
-	}
 
-	public int GetHp()
+	}
+	// Update is called once per frame
+	void Update()
 	{
-		return hp;
+
 	}
 
-	public int GetMaxHp()
-	{
-		return maxHp;
-	}
-
-
-	//　死んだらHPUIを非表示にする
-	public void HideStatusUI()
-	{
-		HPUI.SetActive(false);
-	}
-
-	public void UpdateHPValue()
-	{
-		hpSlider.value = (float)GetHp() / (float)GetMaxHp();
-	}
 }

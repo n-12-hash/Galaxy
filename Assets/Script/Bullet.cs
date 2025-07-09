@@ -32,7 +32,5 @@ public class Bullet : MonoBehaviour
 			  transform.position, Quaternion.identity);
 			Destroy(explosion, 2.0f);       //2•bŒã‚Éexplosion‚ğíœ
 		}
-
-
 	}
 }

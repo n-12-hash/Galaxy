@@ -16,7 +16,7 @@ public class CameraMove : MonoBehaviour
 	{
 
 		//プレイヤーの情報を取得
-		this.player = GameObject.Find("robotSphere");
+		this.player = GameObject.Find("Player");
 
 		// MainCamera(自分自身)とplayerとの相対距離を求める
 		//offset = transform.position - player.transform.position;
