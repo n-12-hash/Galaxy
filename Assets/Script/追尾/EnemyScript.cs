@@ -41,12 +41,12 @@ public class EnemyScript : MonoBehaviour
 		sensor = false;
 	}
 
-	private void OnCollisionEnter(Collision collision)
+	/*private void OnCollisionEnter(Collision collision)
 	{
 		if (collision.gameObject.tag == "Player")
 		{
 			SceneManager.LoadScene("GameOver");
 		}
-	}
+	}*/
 }
 
