@@ -38,27 +38,26 @@ public class hpReduce : MonoBehaviour
 		this.hp = hp;
 
 		//　HP表示用UIのアップデート
-		/*UpdateHPValue();
+		UpdateHPValue();
 		if (hp <= 0)
 		{
 			//　HP表示用UIを非表示にする
 			HideStatusUI();
-		}*/
+		}
 	}
 	void OnTriggerExit(Collider Collision)
 	{
 		if (Collision.gameObject.tag == "Bullet"){
-			hpSlider.value -= 10;
+			hpSlider.value -= 1;
 			Debug.Log("当たった");
 		}
 
 		if (hp <= 0)
 		{
 			Destroy(gameObject); //このオブジェクトを消す
-			AudioSource.PlayClipAtPoint(se, transform.position);
-			GameObject explosion = Instantiate(explosionPrefab,
-			  transform.position, Quaternion.identity);
-			Destroy(explosion, 2.0f);       //2秒後にexplosionを削除
+			AudioSource.PlayClipAtPoint(se, transform.position);//爆発させる
+			GameObject explosion = Instantiate(explosionPrefab, transform.position, Quaternion.identity);
+			Destroy(explosion, 2.0f); //2秒後に爆発を削除
 		}
 
 	}
