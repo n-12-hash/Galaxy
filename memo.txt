@@ -1,0 +1,31 @@
+    using UnityEngine;
+
+    public class DisableObjectDuringAnimation  MonoBehaviour
+    {
+        public Animator animator;  アニメーション対象のオブジェクトにアタッチされたAnimator
+
+        void Start()
+        {
+             Animatorが設定されているか確認
+            if (animator == null)
+            {
+                Debug.LogError(Animator component is not assigned.);
+                enabled = false;  このスクリプトを無効化
+                return;
+            }
+
+             アニメーションが開始されたら、Animatorを無効化
+            animator.enabled = false;
+
+             アニメーション終了後にAnimatorを有効化
+             アニメーションイベントやCoroutineなどを使って終了を検知し、次のコードを実行
+             例 AnimatorのClipの長さを取得し、コルーチンで待機
+            StartCoroutine(EnableAnimatorAfterAnimation(animator.runtimeAnimatorController.animationClips[0].length));
+        }
+
+        IEnumerator EnableAnimatorAfterAnimation(float delay)
+        {
+            yield return new WaitForSeconds(delay);
+            animator.enabled = true;
+        }
+    }
