@@ -1,12 +1,13 @@
 using System.Collections;
 using System.Collections.Generic;
+using System.ComponentModel;
+using TMPro;
 using UnityEngine;
-// ★ Random は Unity の Random だと定義する
-using Random = UnityEngine.Random;
 using UnityEngine.SceneManagement;
 using UnityEngine.UI; // Textを使うために必要
-using TMPro;
 using UnityEngine.Windows;
+// ★ Random は Unity の Random だと定義する
+using Random = UnityEngine.Random;
 
 public class Move : MonoBehaviour
 {
@@ -36,13 +37,29 @@ public class Move : MonoBehaviour
 	// Start is called before the first frame update
 	void Start()
     {
+		if (animator == null)
+		{
+			Debug.LogError("Animator component is not assigned.");
+			enabled = false; //このスクリプトを無効化
+
+				return;
+		}
+
 		rb = GetComponent<Rigidbody>();
 		tf = GetComponent<Transform>();
 		animator = GetComponent<Animator>();
+		animator.enabled = false;
+		StartCoroutine(EnableAnimatorAfterAnimation(animator.runtimeAnimatorController.animationClips[0].length));
 	}
 
-    // Update is called once per frame
-    void Update()
+	IEnumerator EnableAnimatorAfterAnimation(float delay)
+	{
+		yield return new WaitForSeconds(delay);
+		animator.enabled = true;
+	}
+
+	// Update is called once per frame
+	void Update()
     {
 		//if (Pause.isPaused) return; // ポーズ中は何もしない
 		//if (animator.SetBool("Start_Anim", true).isPaused) return; // ポーズ中は何もしない
