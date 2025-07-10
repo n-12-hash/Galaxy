@@ -19,7 +19,7 @@ public class CameraMove : MonoBehaviour
 		this.player = GameObject.Find("Player");
 
 		// MainCamera(自分自身)とplayerとの相対距離を求める
-		//offset = transform.position - player.transform.position;
+		offset = transform.position - player.transform.position;
 
 	}
 
@@ -29,11 +29,6 @@ public class CameraMove : MonoBehaviour
 		transform.position += player.GetComponent<Move>().Value;
 
 		//新しいトランスフォームの値を代入する
-		//transform.position = player.transform.position + offset;
-
-		//プレイヤーの向きと同じようにカメラの向きを変更する
-		//transform.rotation = player.transform.rotation;
+		transform.position = player.transform.position + offset;
 	}
-
-
 }

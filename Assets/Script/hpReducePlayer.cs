@@ -3,15 +3,15 @@ using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.UI;
 
-public class hpReduce : MonoBehaviour
+public class hpReducePlayer: MonoBehaviour
 {
 	//爆発のPrefabを宣言
 	[SerializeField] GameObject explosionPrefab;
 	[SerializeField] AudioClip se;
-	//　敵のMaxHP
+	//　自分のMaxHP
 	[SerializeField]
 	private int maxHp = 100;
-	//　敵のHP
+	//　自分のHP
 	[SerializeField]
 	private int hp;
 	//　HP表示用UI
@@ -36,7 +36,7 @@ public class hpReduce : MonoBehaviour
 	}
 	void OnTriggerExit(Collider Collision)
 	{
-		if (Collision.gameObject.tag == "Bullet"){
+		if (Collision.gameObject.tag == "EnemyBullet"){
 			hp -= 10;
 			hpSlider.value = hp / (float)maxHp;
 			Debug.Log("当たった" + hpSlider.value);
@@ -44,7 +44,6 @@ public class hpReduce : MonoBehaviour
 
 		if (hp <= 0)
 		{
-			Destroy(gameObject); //このオブジェクトを消す
 			AudioSource.PlayClipAtPoint(se, transform.position);//爆発させる
 			GameObject explosion = Instantiate(explosionPrefab, transform.position, Quaternion.identity);
 			Destroy(explosion, 2.0f); //2秒後に爆発を削除
