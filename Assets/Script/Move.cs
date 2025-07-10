@@ -113,7 +113,7 @@ public class Move : MonoBehaviour
 	{
 
 		afterglowTime--;
-		if (GameObject.Find("robotSphere") && - 15 > gameObject.transform.position.y)
+		if (GameObject.Find("Player") && - 15 > gameObject.transform.position.y)
 		{
 			SceneManager.LoadScene(SceneManager.GetActiveScene().name);
 		}
