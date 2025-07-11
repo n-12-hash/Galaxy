@@ -37,26 +37,11 @@ public class Move : MonoBehaviour
 	// Start is called before the first frame update
 	void Start()
     {
-		if (animator == null)
-		{
-			Debug.LogError("Animator component is not assigned.");
-			enabled = false; //このスクリプトを無効化
-
-				return;
-		}
-
 		rb = GetComponent<Rigidbody>();
 		tf = GetComponent<Transform>();
 		animator = GetComponent<Animator>();
-		animator.enabled = false;
-		StartCoroutine(EnableAnimatorAfterAnimation(animator.runtimeAnimatorController.animationClips[0].length));
 	}
 
-	IEnumerator EnableAnimatorAfterAnimation(float delay)
-	{
-		yield return new WaitForSeconds(delay);
-		animator.enabled = true;
-	}
 
 	// Update is called once per frame
 	void Update()

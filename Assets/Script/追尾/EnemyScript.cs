@@ -3,11 +3,12 @@ using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.AI;
 using UnityEngine.SceneManagement;
+using UnityEngine.UIElements;
 
 public class EnemyScript : MonoBehaviour
 {
 	public Transform Target;
-	public Transform random;
+	public Transform initialposition;//random;
 	NavMeshAgent agent;
 	bool sensor;
 	public float speed;
@@ -23,7 +24,7 @@ public class EnemyScript : MonoBehaviour
 	{
 		if (sensor == false)
 		{
-			agent.destination = random.transform.position;
+			//agent.destination = initialposition.transform.position;
 		}
 		else
 		{

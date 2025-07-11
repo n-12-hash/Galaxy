@@ -10,7 +10,7 @@ public class hpReducePlayer: MonoBehaviour
 	[SerializeField] AudioClip se;
 	//Å@é©ï™ÇÃMaxHP
 	[SerializeField]
-	private int maxHp = 100;
+	private int maxHp;
 	//Å@é©ï™ÇÃHP
 	[SerializeField]
 	private int hp;
@@ -23,7 +23,6 @@ public class hpReducePlayer: MonoBehaviour
 	// Start is called before the first frame update
 	void Start()
 	{
-		//hpSlider.value = 100;
 		hp = maxHp;
 		hpSlider = HPUI.transform.Find("HPBar").GetComponent<Slider>();
 		hpSlider.value = 1f;

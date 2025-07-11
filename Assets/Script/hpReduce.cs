@@ -10,7 +10,7 @@ public class hpReduce : MonoBehaviour
 	[SerializeField] AudioClip se;
 	//Å@ìGÇÃMaxHP
 	[SerializeField]
-	private int maxHp = 100;
+	private int maxHp;
 	//Å@ìGÇÃHP
 	[SerializeField]
 	private int hp;
