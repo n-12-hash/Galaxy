@@ -35,10 +35,11 @@ public class hpReducePlayer: MonoBehaviour
 	}
 	void OnTriggerExit(Collider Collision)
 	{
-		if (Collision.gameObject.tag == "EnemyBullet"){
+		if (Collision.gameObject.gameObject.tag == "EnemyBullet"){
 			hp -= 10;
 			hpSlider.value = hp / (float)maxHp;
 			Debug.Log("“–‚½‚Á‚½" + hpSlider.value);
+			Destroy(Collision.gameObject);
 		}
 
 		if (hp <= 0)

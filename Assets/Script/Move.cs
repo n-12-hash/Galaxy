@@ -22,7 +22,7 @@ public class Move : MonoBehaviour
 	private Vector3 velocity;
 	//[Header("移動速度"), SerializeField]
 	private float moveSpeed = 10f;
-	private float DashSpeed = 100f;
+	private float DashSpeed = 1000f;
 	public float jumpPower;
 	bool isGround = false;      //地面接地フラグを宣言
 	int jumpCount = 0;     //ジャンプの回数をカウントする変数を宣言
@@ -103,7 +103,7 @@ public class Move : MonoBehaviour
 		}
 
 
-		if (UnityEngine.Input.GetKeyDown(KeyCode.JoystickButton3) && jumpCount <= 2 )   
+		if (UnityEngine.Input.GetKeyDown(KeyCode.JoystickButton3) && jumpCount <= 1 )   
 		{
 			//Rigidbodyに上方向にJumpPowerの力を加え
 			rb.AddForce(transform.up * jumpPower);

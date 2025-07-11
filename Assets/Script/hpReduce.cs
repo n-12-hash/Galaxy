@@ -40,6 +40,7 @@ public class hpReduce : MonoBehaviour
 			hp -= 10;
 			hpSlider.value = hp / (float)maxHp;
 			Debug.Log("“–‚½‚Á‚½" + hpSlider.value);
+			Destroy(Collision.gameObject);
 		}
 
 		if (hp <= 0)

@@ -725,6 +725,7 @@ GameObject:
   - component: {fileID: 5258233286872150764}
   - component: {fileID: 5225066366189880798}
   - component: {fileID: 5233761558455093480}
+  - component: {fileID: 4478584949792191642}
   m_Layer: 0
   m_Name: rear_plate
   m_TagString: Untagged
@@ -797,6 +798,28 @@ MeshRenderer:
   m_SortingLayer: 0
   m_SortingOrder: 0
   m_AdditionalVertexStreams: {fileID: 0}
+--- !u!64 &4478584949792191642
+MeshCollider:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 5255963894272016560}
+  m_Material: {fileID: 0}
+  m_IncludeLayers:
+    serializedVersion: 2
+    m_Bits: 0
+  m_ExcludeLayers:
+    serializedVersion: 2
+    m_Bits: 0
+  m_LayerOverridePriority: 0
+  m_IsTrigger: 0
+  m_ProvidesContacts: 0
+  m_Enabled: 1
+  serializedVersion: 5
+  m_Convex: 1
+  m_CookingOptions: 30
+  m_Mesh: {fileID: 4300010, guid: bff429107601444d59c67940e6ad78c4, type: 3}
 --- !u!1 &5255963962521865984
 GameObject:
   m_ObjectHideFlags: 0
@@ -1596,7 +1619,6 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 5253013913645057786}
-  - component: {fileID: 6705991590709636881}
   m_Layer: 0
   m_Name: main_jt
   m_TagString: Untagged
@@ -1624,27 +1646,6 @@ Transform:
   - {fileID: 5258047623882346044}
   m_Father: {fileID: 5258253780102478096}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
---- !u!135 &6705991590709636881
-SphereCollider:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 5256397694439615852}
-  m_Material: {fileID: 0}
-  m_IncludeLayers:
-    serializedVersion: 2
-    m_Bits: 0
-  m_ExcludeLayers:
-    serializedVersion: 2
-    m_Bits: 0
-  m_LayerOverridePriority: 0
-  m_IsTrigger: 1
-  m_ProvidesContacts: 0
-  m_Enabled: 1
-  serializedVersion: 3
-  m_Radius: 0.05
-  m_Center: {x: 0, y: 0, z: 0}
 --- !u!1 &5256420214398843972
 GameObject:
   m_ObjectHideFlags: 0
@@ -2339,6 +2340,7 @@ GameObject:
   - component: {fileID: 5258405986613385202}
   - component: {fileID: 5225111436708026680}
   - component: {fileID: 5234366786998236564}
+  - component: {fileID: 7468093140046869774}
   m_Layer: 0
   m_Name: right_plate
   m_TagString: Untagged
@@ -2411,6 +2413,28 @@ MeshRenderer:
   m_SortingLayer: 0
   m_SortingOrder: 0
   m_AdditionalVertexStreams: {fileID: 0}
+--- !u!64 &7468093140046869774
+MeshCollider:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 5256627359398137074}
+  m_Material: {fileID: 0}
+  m_IncludeLayers:
+    serializedVersion: 2
+    m_Bits: 0
+  m_ExcludeLayers:
+    serializedVersion: 2
+    m_Bits: 0
+  m_LayerOverridePriority: 0
+  m_IsTrigger: 0
+  m_ProvidesContacts: 0
+  m_Enabled: 1
+  serializedVersion: 5
+  m_Convex: 1
+  m_CookingOptions: 30
+  m_Mesh: {fileID: 4300036, guid: bff429107601444d59c67940e6ad78c4, type: 3}
 --- !u!1 &5256633468817462260
 GameObject:
   m_ObjectHideFlags: 0
@@ -3018,7 +3042,7 @@ GameObject:
   - component: {fileID: 5232881976765096553}
   - component: {fileID: 7582740244882587187}
   - component: {fileID: 1089446429717748129}
-  - component: {fileID: 5561455566258007742}
+  - component: {fileID: 7745445998872178892}
   m_Layer: 0
   m_Name: Player
   m_TagString: Player
@@ -3103,7 +3127,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 54007152c0d318b47b923371caa9b59e, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  jumpPower: 400
+  jumpPower: 500
 --- !u!114 &1089446429717748129
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -3121,8 +3145,8 @@ MonoBehaviour:
   maxHp: 100
   hp: 0
   HPUI: {fileID: 1477935197718583190}
---- !u!65 &5561455566258007742
-BoxCollider:
+--- !u!135 &7745445998872178892
+SphereCollider:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInstance: {fileID: 0}
@@ -3140,8 +3164,8 @@ BoxCollider:
   m_ProvidesContacts: 0
   m_Enabled: 1
   serializedVersion: 3
-  m_Size: {x: 0.1, y: 0.1, z: 0}
-  m_Center: {x: 0, y: 0.05, z: 0.05000003}
+  m_Radius: 0.05
+  m_Center: {x: 0, y: 0.07, z: 0}
 --- !u!1 &5256758416230865642
 GameObject:
   m_ObjectHideFlags: 0
@@ -3319,6 +3343,7 @@ GameObject:
   - component: {fileID: 5258241769728245758}
   - component: {fileID: 5225131810046657564}
   - component: {fileID: 5235275639434768446}
+  - component: {fileID: 1129705844969664048}
   m_Layer: 0
   m_Name: left_plate
   m_TagString: Untagged
@@ -3391,6 +3416,28 @@ MeshRenderer:
   m_SortingLayer: 0
   m_SortingOrder: 0
   m_AdditionalVertexStreams: {fileID: 0}
+--- !u!64 &1129705844969664048
+MeshCollider:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 5256767394925845404}
+  m_Material: {fileID: 0}
+  m_IncludeLayers:
+    serializedVersion: 2
+    m_Bits: 0
+  m_ExcludeLayers:
+    serializedVersion: 2
+    m_Bits: 0
+  m_LayerOverridePriority: 0
+  m_IsTrigger: 0
+  m_ProvidesContacts: 0
+  m_Enabled: 1
+  serializedVersion: 5
+  m_Convex: 1
+  m_CookingOptions: 30
+  m_Mesh: {fileID: 4300062, guid: bff429107601444d59c67940e6ad78c4, type: 3}
 --- !u!1 &5256775542633292584
 GameObject:
   m_ObjectHideFlags: 0
@@ -4396,8 +4443,8 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   sound: {fileID: 8300000, guid: 16e501a76ad0bf24f8b6854556ec083c, type: 3}
   PistolBullet: {fileID: 2503511347906627806, guid: 9674a56e3c262c444a1ea7693c3351ed, type: 3}
-  fireRate: 10000
-  bulletSpeed: 700
+  fireRate: 100
+  bulletSpeed: 1000
 --- !u!135 &4322952364226804078
 SphereCollider:
   m_ObjectHideFlags: 0

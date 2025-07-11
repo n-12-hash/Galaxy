@@ -4,30 +4,41 @@ using UnityEngine;
 
 public class EnemyShoot : MonoBehaviour
 {
-	[SerializeField] GameObject player;
-	[SerializeField] GameObject bullet;
-	private float bulletSpeed = 20.0f;
-	private float time = 1.0f;
+	public GameObject shellPrefab;
+	public AudioClip sound;
+	[SerializeField] private float bulletSpeed;
+	[SerializeField] private float fireRate; // ”­ËŠÔŠui•bj
+	[SerializeField] private float nextFireTime; // Ÿ‚É”­Ë‚Å‚«‚éŠÔ
+	/*void Start()
+	{
+		// w’è‚µ‚½ƒƒ\ƒbƒh‚ğAw’è‚µ‚½ŠÔi’PˆÊG•bj‚©‚çAw’è‚µ‚½ŠÔŠui’PˆÊG•bj‚ÅŒJ‚è•Ô‚µÀs‚·‚éB
+		InvokeRepeating("Shot", 0f, 1f);
+	}*/
 
 	void Update()
 	{
-		transform.LookAt(player.transform);
-		time -= Time.deltaTime;
-		if (time <= 0)
+		if (Time.time >= nextFireTime)
 		{
-			BallShot();
-			time = 1.0f;
+			Shot();
+			nextFireTime = Time.time + 1f / fireRate;
 		}
 	}
 
-	void BallShot()
+	void Shot()
 	{
-		GameObject newbullet = Instantiate(bullet, transform.position, Quaternion.identity);//’e‚ğ¶¬
-		newbullet.GetComponent<Rigidbody>().velocity = transform.forward * bulletSpeed;
-		Rigidbody bulletRigidbody = newbullet.GetComponent<Rigidbody>();
-		bulletRigidbody.AddForce(transform.forward * bulletSpeed); //ƒLƒƒƒ‰ƒNƒ^[‚ªŒü‚¢‚Ä‚¢‚é•ûŒü‚É’e‚É—Í‚ğ‰Á‚¦‚é*/
-		Destroy(newbullet, 3); //3•bŒã‚É’e‚ğÁ‚·
+		// ’e‚ğ¶¬
+		GameObject shell = Instantiate(shellPrefab, transform.position, Quaternion.identity);
+		// ’e‚É—Í‚ğ‰Á‚¦‚é
+		Rigidbody shellRb = shell.GetComponent<Rigidbody>();
+		// ’e‘¬‚Í©—R‚Éİ’è
+		shellRb.AddForce(transform.forward * bulletSpeed);
 
+		// ”­Ë‰¹‚ğo‚·
+		AudioSource.PlayClipAtPoint(sound, transform.position);
 
+		// ‚T•bŒã‚É–C’e‚ğ”j‰ó‚·‚é
+		Destroy(shell, 5.0f);
 	}
 }
+
+
