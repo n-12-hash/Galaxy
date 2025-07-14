@@ -19,12 +19,12 @@ public class EnemyShoot : MonoBehaviour
 	{
 		if (Time.time >= nextFireTime)
 		{
-			Shot();
+			Shoot();
 			nextFireTime = Time.time + 1f / fireRate;
 		}
 	}
 
-	void Shot()
+	void Shoot()
 	{
 		// íeÇê∂ê¨
 		GameObject shell = Instantiate(shellPrefab, transform.position, Quaternion.identity);

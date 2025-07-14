@@ -1,11 +1,14 @@
 using System.Collections;
 using System.Collections.Generic;
+using UnityEditor;
 using UnityEngine;
 
 public class EnemyShoot1 : MonoBehaviour
 {
 	[SerializeField] GameObject player;
 	[SerializeField] GameObject bullet;
+	[SerializeField] private float fireRate; // ”­ËŠÔŠui•bj
+	[SerializeField] private float nextFireTime; // Ÿ‚É”­Ë‚Å‚«‚éŠÔ
 	[SerializeField] private float bulletSpeed;
 	private float time = 1.0f;
 
@@ -13,19 +16,22 @@ public class EnemyShoot1 : MonoBehaviour
 	{
 		transform.LookAt(player.transform);
 		time -= Time.deltaTime;
-		if (time <= 0)
+		if (Time.time >= nextFireTime)
 		{
-			BallShot();
-			time = 1.0f;
+			BallShoot();
+			nextFireTime = Time.time + 1f / fireRate;
 		}
 	}
 
-	void BallShot()
+	void BallShoot()
 	{
-		GameObject newbullet = Instantiate(bullet, transform.position, Quaternion.identity);//’e‚ğ¶¬
+		//’e‚ğ¶¬
+		GameObject newbullet = Instantiate(bullet, transform.position, Quaternion.identity);
 		newbullet.GetComponent<Rigidbody>().velocity = transform.forward * bulletSpeed;
-		Rigidbody bulletRigidbody = newbullet.GetComponent<Rigidbody>();
-		bulletRigidbody.AddForce(transform.forward * bulletSpeed); //ƒLƒƒƒ‰ƒNƒ^[‚ªŒü‚¢‚Ä‚¢‚é•ûŒü‚É’e‚É—Í‚ğ‰Á‚¦‚é*/
+		// ’e‚É—Í‚ğ‰Á‚¦‚é
+		Rigidbody bulletRigidbod = newbullet.GetComponent<Rigidbody>();
+		// ’e‘¬‚Í©—R‚Éİ’è
+		bulletRigidbod.AddForce(transform.forward * bulletSpeed);
 		Destroy(newbullet, 3); //3•bŒã‚É’e‚ğÁ‚·
 
 
