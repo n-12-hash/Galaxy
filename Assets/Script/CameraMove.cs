@@ -31,4 +31,16 @@ public class CameraMove : MonoBehaviour
 		//新しいトランスフォームの値を代入する
 		transform.position = player.transform.position + offset;
 	}
+
+	private void FixedUpdate()
+	{
+
+		afterglowTime--;
+		if (GameObject.Find("Player") && -15 > gameObject.transform.position.y)
+		{
+			gameObject.transform.position = new Vector3(21, 7, 0);
+		}
+
+	}
+
 }

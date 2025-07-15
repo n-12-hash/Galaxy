@@ -1,6 +1,7 @@
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.EventSystems;
 using UnityEngine.UI;
 
 public class hpReducePlayer: MonoBehaviour
@@ -19,6 +20,10 @@ public class hpReducePlayer: MonoBehaviour
 	private GameObject HPUI;
 	//　HP表示用スライダー
 	private Slider hpSlider;
+	// ゲームオーバー処理
+	[SerializeField] private GameObject pauseUI;
+	public static bool isPaused = false; // ← static に変更
+	[SerializeField] private GameObject optionFirst;
 
 	// Start is called before the first frame update
 	void Start()
@@ -44,10 +49,24 @@ public class hpReducePlayer: MonoBehaviour
 
 		if (hp <= 0)
 		{
+			Destroy(gameObject); //このオブジェクトを消す
 			AudioSource.PlayClipAtPoint(se, transform.position);//爆発させる
 			GameObject explosion = Instantiate(explosionPrefab, transform.position, Quaternion.identity);
 			Destroy(explosion, 2.0f); //2秒後に爆発を削除
+			TogglePause();
 		}
+
+	}
+
+	public void TogglePause()
+	{
+		isPaused = !isPaused;
+		if (isPaused)
+		{
+			EventSystem.current.SetSelectedGameObject(null);
+			EventSystem.current.SetSelectedGameObject(optionFirst);
+		}
+		pauseUI.SetActive(isPaused);
 
 	}
 	// Update is called once per frame

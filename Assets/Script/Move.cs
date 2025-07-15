@@ -117,7 +117,7 @@ public class Move : MonoBehaviour
 		afterglowTime--;
 		if (GameObject.Find("Player") && - 15 > gameObject.transform.position.y)
 		{
-			SceneManager.LoadScene(SceneManager.GetActiveScene().name);
+			gameObject.transform.position = new Vector3(0, 0, 0);
 		}
 
 

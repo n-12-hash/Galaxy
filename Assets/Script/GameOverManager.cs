@@ -4,26 +4,15 @@ using UnityEngine;
 using UnityEngine.UI;
 using UnityEngine.SceneManagement;
 
-public class Stage1 : MonoBehaviour
+public class GameOverManager : MonoBehaviour
 {
 
 	public Image fadePanel;             // フェード用のUIパネル（Image）
-	public float fadeDuration;   // フェードの完了にかかる時間
-	/*public void change_button()
-	{
-
-	}*/
-	public void FadeAndLoadScene()
-	{
-		StartCoroutine(FadeOutAndLoadScene());
-	}
+	public float fadeDuration = 1.0f;   // フェードの完了にかかる時間
 
 	private void Start()
 	{
-		fadePanel.enabled = false;
-		Color c = fadePanel.color;
-		c.a = 0f;
-		fadePanel.color = c;
+		StartCoroutine(FadeOutAndLoadScene());
 	}
 
 	public IEnumerator FadeOutAndLoadScene()
@@ -43,8 +32,7 @@ public class Stage1 : MonoBehaviour
 		}
 
 		fadePanel.color = endColor;  // フェードが完了したら最終色に設定
-		SceneManager.LoadScene("Stage1");
-
+		SceneManager.LoadScene("Title"); // シーンをロードしてメニューシーンに遷移
 	}
 }
 
