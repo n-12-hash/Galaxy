@@ -1619,7 +1619,6 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 5253013913645057786}
-  - component: {fileID: 4295994677835461262}
   m_Layer: 0
   m_Name: main_jt
   m_TagString: Untagged
@@ -1647,28 +1646,6 @@ Transform:
   - {fileID: 5258047623882346044}
   m_Father: {fileID: 5258253780102478096}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
---- !u!64 &4295994677835461262
-MeshCollider:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 5256397694439615852}
-  m_Material: {fileID: 0}
-  m_IncludeLayers:
-    serializedVersion: 2
-    m_Bits: 0
-  m_ExcludeLayers:
-    serializedVersion: 2
-    m_Bits: 0
-  m_LayerOverridePriority: 0
-  m_IsTrigger: 0
-  m_ProvidesContacts: 0
-  m_Enabled: 1
-  serializedVersion: 5
-  m_Convex: 0
-  m_CookingOptions: 30
-  m_Mesh: {fileID: 0}
 --- !u!1 &5256420214398843972
 GameObject:
   m_ObjectHideFlags: 0
@@ -2469,6 +2446,7 @@ GameObject:
   - component: {fileID: 5252979851994217388}
   - component: {fileID: 5225106695887912642}
   - component: {fileID: 5233810599443533824}
+  - component: {fileID: 6548098852075337495}
   m_Layer: 0
   m_Name: body
   m_TagString: Untagged
@@ -2542,6 +2520,28 @@ MeshRenderer:
   m_SortingLayer: 0
   m_SortingOrder: 0
   m_AdditionalVertexStreams: {fileID: 0}
+--- !u!64 &6548098852075337495
+MeshCollider:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 5256633468817462260}
+  m_Material: {fileID: 0}
+  m_IncludeLayers:
+    serializedVersion: 2
+    m_Bits: 0
+  m_ExcludeLayers:
+    serializedVersion: 2
+    m_Bits: 0
+  m_LayerOverridePriority: 0
+  m_IsTrigger: 0
+  m_ProvidesContacts: 0
+  m_Enabled: 1
+  serializedVersion: 5
+  m_Convex: 1
+  m_CookingOptions: 30
+  m_Mesh: {fileID: 4300078, guid: bff429107601444d59c67940e6ad78c4, type: 3}
 --- !u!1 &5256680143718439194
 GameObject:
   m_ObjectHideFlags: 0
@@ -3150,6 +3150,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 54007152c0d318b47b923371caa9b59e, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  moveSpeed: 10
   jumpPower: 500
 --- !u!114 &1089446429717748129
 MonoBehaviour:
@@ -3168,6 +3169,8 @@ MonoBehaviour:
   maxHp: 100
   hp: 0
   HPUI: {fileID: 1477935197718583190}
+  pauseUI: {fileID: 0}
+  optionFirst: {fileID: 0}
 --- !u!135 &7745445998872178892
 SphereCollider:
   m_ObjectHideFlags: 0
@@ -4466,8 +4469,9 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   sound: {fileID: 8300000, guid: 16e501a76ad0bf24f8b6854556ec083c, type: 3}
   PistolBullet: {fileID: 2503511347906627806, guid: 9674a56e3c262c444a1ea7693c3351ed, type: 3}
-  fireRate: 100
+  fireRate: 3
   bulletSpeed: 1000
+  nextFireTime: 5
 --- !u!135 &4322952364226804078
 SphereCollider:
   m_ObjectHideFlags: 0

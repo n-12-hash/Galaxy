@@ -6,7 +6,7 @@ using UnityEngine.SceneManagement;
 
 public class Stage1 : MonoBehaviour
 {
-
+	[SerializeField] AudioClip se;
 	public Image fadePanel;             // フェード用のUIパネル（Image）
 	public float fadeDuration;   // フェードの完了にかかる時間
 	/*public void change_button()
@@ -16,6 +16,7 @@ public class Stage1 : MonoBehaviour
 	public void FadeAndLoadScene()
 	{
 		StartCoroutine(FadeOutAndLoadScene());
+		AudioSource.PlayClipAtPoint(se, transform.position);
 	}
 
 	private void Start()

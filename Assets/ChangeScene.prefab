@@ -58,6 +58,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 14852ea3d19a879458ac8803f6a87bce, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  se: {fileID: 8300000, guid: f16fe5b6a3013634faca3fdac68fd7c0, type: 3}
   fadePanel: {fileID: 0}
   fadeDuration: 3
 --- !u!114 &11690485248204840

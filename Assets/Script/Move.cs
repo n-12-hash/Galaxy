@@ -20,7 +20,7 @@ public class Move : MonoBehaviour
 	private float horizontal = 0;
 	private float vertical = 0;
 	private Vector3 velocity;
-	//[Header("移動速度"), SerializeField]
+	[Header("移動速度"), SerializeField]
 	private float moveSpeed = 10f;
 	private float DashSpeed = 1000f;
 	public float jumpPower;
@@ -46,7 +46,7 @@ public class Move : MonoBehaviour
 	// Update is called once per frame
 	void Update()
     {
-		//if (Pause.isPaused) return; // ポーズ中は何もしない
+		if (Pause.isPaused) return; // ポーズ中は何もしない
 		//if (animator.SetBool("Start_Anim", true).isPaused) return; // ポーズ中は何もしない
 		prevPos = transform.position;
 
@@ -127,7 +127,7 @@ public class Move : MonoBehaviour
 	void OnCollisionEnter(Collision collision)
 	{
 		//当たった相手の名前が「Plane」なら
-		if (collision.gameObject.tag == "Plane")
+		if (collision.gameObject.tag == "Plane" || collision.gameObject.tag == "Turret")
 		{
 			jumpCount = 0;
 		}
@@ -137,7 +137,7 @@ public class Move : MonoBehaviour
 	void OnCollisionExit(Collision collision)
 	{
 		//脱出した相手の名前が「Plane」なら
-		if (collision.gameObject.tag == "Plane")
+		if (collision.gameObject.tag == "Plane" || collision.gameObject.tag == "Turret")
 		{
 			isGround = false;     //isGround　を false に
 		}
