@@ -317,7 +317,7 @@ BoxCollider:
   m_ProvidesContacts: 0
   m_Enabled: 1
   serializedVersion: 3
-  m_Size: {x: 10, y: 0, z: 10}
+  m_Size: {x: 5, y: 0, z: 20}
   m_Center: {x: 0, y: 0, z: 0}
 --- !u!114 &280762528091142269
 MonoBehaviour:
@@ -527,7 +527,7 @@ MonoBehaviour:
   bullet: {fileID: 2503511347906627806, guid: f522e6e8bd27a7a4f80427808bdedc5f, type: 3}
   fireRate: 0.5
   nextFireTime: 10
-  bulletSpeed: 100
+  bulletSpeed: 50
   Target: {fileID: 0}
 --- !u!1001 &6852322206238372902
 PrefabInstance:
@@ -626,6 +626,9 @@ PrefabInstance:
     - targetCorrespondingSourceObject: {fileID: 100000, guid: 28723f10c2a8e094a9351e892f5271b8, type: 3}
       insertIndex: -1
       addedObject: {fileID: 78686037549346384}
+    - targetCorrespondingSourceObject: {fileID: 100000, guid: 28723f10c2a8e094a9351e892f5271b8, type: 3}
+      insertIndex: -1
+      addedObject: {fileID: 9221929660645792361}
   m_SourcePrefab: {fileID: 100100000, guid: 28723f10c2a8e094a9351e892f5271b8, type: 3}
 --- !u!1 &6852322206238274182 stripped
 GameObject:
@@ -717,8 +720,30 @@ BoxCollider:
   m_ProvidesContacts: 0
   m_Enabled: 1
   serializedVersion: 3
-  m_Size: {x: 3.5754952, y: 3.3034475, z: 3.116846}
-  m_Center: {x: 0, y: 0.17677669, z: 0.42277852}
+  m_Size: {x: 3.5754952, y: 4.86587, z: 3.116846}
+  m_Center: {x: 0, y: 0.957986, z: 0.42277852}
+--- !u!195 &9221929660645792361
+NavMeshAgent:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 6852322206238274182}
+  m_Enabled: 1
+  m_AgentTypeID: 0
+  m_Radius: 1.9812009
+  m_Speed: 3.5
+  m_Acceleration: 8
+  avoidancePriority: 50
+  m_AngularSpeed: 120
+  m_StoppingDistance: 0
+  m_AutoTraverseOffMeshLink: 1
+  m_AutoBraking: 1
+  m_AutoRepath: 1
+  m_Height: 3.6570005
+  m_BaseOffset: 1.5
+  m_WalkableMask: 4294967295
+  m_ObstacleAvoidanceType: 4
 --- !u!4 &6852322206238502566 stripped
 Transform:
   m_CorrespondingSourceObject: {fileID: 400000, guid: 28723f10c2a8e094a9351e892f5271b8, type: 3}
