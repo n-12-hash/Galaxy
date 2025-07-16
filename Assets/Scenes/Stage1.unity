@@ -5803,7 +5803,7 @@ GameObject:
   m_Component:
   - component: {fileID: 932629336}
   m_Layer: 0
-  m_Name: Turret_basic_lvl2
+  m_Name: "Turret_basic_lvl2\u30FB3"
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
