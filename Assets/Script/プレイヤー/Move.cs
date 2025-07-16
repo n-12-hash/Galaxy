@@ -100,17 +100,6 @@ public class Move : MonoBehaviour
 			tf.rotation = Quaternion.LookRotation(velocity);
 		}
 
-		if (UnityEngine.Input.GetKey(KeyCode.JoystickButton2))
-		{
-			animator.SetBool("Open_Anim", false);
-		}
-
-		else
-		{
-			animator.SetBool("Open_Anim", true);
-		}
-
-
 		if (UnityEngine.Input.GetKeyDown(KeyCode.JoystickButton3) && jumpCount <= 1 )   
 		{
 			//Rigidbody‚Éã•ûŒü‚ÉJumpPower‚Ì—Í‚ð‰Á‚¦
