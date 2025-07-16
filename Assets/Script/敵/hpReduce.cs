@@ -3,7 +3,7 @@ using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.UI;
 
-public class hpReduce : MonoBehaviour
+public class HpReduce : MonoBehaviour
 {
 	//”š”­‚ÌPrefab‚ğéŒ¾
 	[SerializeField] GameObject explosionPrefab;

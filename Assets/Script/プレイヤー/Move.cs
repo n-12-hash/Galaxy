@@ -60,45 +60,40 @@ public class Move : MonoBehaviour
 
 		if (velocity.magnitude > 0.1f)
 		{
-			if (UnityEngine.Input.GetKeyDown(KeyCode.JoystickButton1))
-			{
-
-				animator.SetBool("Roll_Anim", true);
-				float moveZ = UnityEngine.Input.GetAxis("Horizontal") * DashSpeed * Time.deltaTime; // 水平方向の移動
-				transform.position += new Vector3(0, 0, moveZ); // オブジェクトの位置を更新
-			}
-			else
-			{
-				animator.SetBool("Walk_Anim", true);
-
-				float moveZ = UnityEngine.Input.GetAxis("Horizontal") * moveSpeed * Time.deltaTime; // 水平方向の移動
-				transform.position += new Vector3(0, 0, moveZ); // オブジェクトの位置を更新
-			}
+			animator.SetBool("Walk_Anim", true);
+			float moveZ = UnityEngine.Input.GetAxis("Horizontal") * moveSpeed * Time.deltaTime; // 水平方向の移動
+			transform.position += new Vector3(0, 0, moveZ); // オブジェクトの位置を更新
 
 		}
 		else if (horizontal < -0.1f)
 		{
-			if (UnityEngine.Input.GetKeyDown(KeyCode.JoystickButton1))
-			{
-
-				animator.SetBool("Roll_Anim", true);
-				float moveZ = UnityEngine.Input.GetAxis("Horizontal") * DashSpeed * Time.deltaTime; // 水平方向の移動
-				transform.position += new Vector3(0, 0, moveZ); // オブジェクトの位置を更新
-			}
-			else
-			{
-				animator.SetBool("Walk_Anim", true);
-
-				float moveZ = UnityEngine.Input.GetAxis("Horizontal") * moveSpeed * Time.deltaTime; // 水平方向の移動
-				transform.position += new Vector3(0, 0, moveZ); // オブジェクトの位置を更新
-			}
+			animator.SetBool("Walk_Anim", true);
+			float moveZ = UnityEngine.Input.GetAxis("Horizontal") * moveSpeed * Time.deltaTime; // 水平方向の移動
+			transform.position += new Vector3(0, 0, moveZ); // オブジェクトの位置を更新
 		}
 
 		else
 		{
 			animator.SetBool("Walk_Anim", false);
-			animator.SetBool("Roll_Anim", true);
 		}
+		/*if (velocity.magnitude > 0.1f && UnityEngine.Input.GetKeyDown(KeyCode.JoystickButton1))
+		{
+			animator.SetBool("Roll_Anim", true);
+			float moveZ = UnityEngine.Input.GetAxis("Horizontal") * DashSpeed * Time.deltaTime; // 水平方向の移動
+			transform.position += new Vector3(0, 0, moveZ); // オブジェクトの位置を更新
+
+		}
+		else if (horizontal < -0.1f && UnityEngine.Input.GetKeyDown(KeyCode.JoystickButton1))
+		{
+			animator.SetBool("Roll_Anim", true);
+			float moveZ = UnityEngine.Input.GetAxis("Horizontal") * DashSpeed * Time.deltaTime; // 水平方向の移動
+			transform.position += new Vector3(0, 0, moveZ); // オブジェクトの位置を更新
+		}
+
+		else
+		{
+			animator.SetBool("Roll_Anim", false);
+		}*/
 
 		if (velocity != Vector3.zero)
 		{
@@ -120,8 +115,8 @@ public class Move : MonoBehaviour
 		{
 			//Rigidbodyに上方向にJumpPowerの力を加え
 			rb.AddForce(transform.up * jumpPower);
-			GameObject jump = Instantiate(jumpPrefab, transform.position, Quaternion.identity);
-			Destroy(jump, 2.0f); //2秒後に爆発を削除
+			GameObject Jump = Instantiate(jumpPrefab, transform.position, Quaternion.identity);
+			Destroy(Jump, 2.0f); //2秒後に削除
 			jumpCount++;    //jumpCount をインクリメント
 		}
 	}

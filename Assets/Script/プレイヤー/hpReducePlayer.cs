@@ -4,7 +4,7 @@ using UnityEngine;
 using UnityEngine.EventSystems;
 using UnityEngine.UI;
 
-public class hpReducePlayer: MonoBehaviour
+public class HpReducePlayer: MonoBehaviour
 {
 	//”š”­‚ÌPrefab‚ğéŒ¾
 	[SerializeField] GameObject explosionPrefab;
