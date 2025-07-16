@@ -6,16 +6,18 @@ using UnityEngine;
 public class Shoot : MonoBehaviour
 {
 
+	private Animator animator;  // アニメーション
 	public AudioClip sound;
 	public GameObject PistolBullet; // 弾
 	public float fireRate = 2.0f;   // 発射間隔
 	public float bulletSpeed; //弾の速度
 	[SerializeField] private float nextFireTime; // 次に発射できる時間
+	Move script; //参照するスクリプト
 
 
 	void Update()
 	{
-		if (Input.GetKeyDown(KeyCode.JoystickButton4) || Input.GetKeyDown(KeyCode.JoystickButton5) )
+		if (/*animator.SetBool("Walk_Anim", true) &&*/ Input.GetKeyDown(KeyCode.JoystickButton4) || Input.GetKeyDown(KeyCode.JoystickButton5))
 		{
 			PlayerShoot();
 			nextFireTime = Time.time + 1f / fireRate;

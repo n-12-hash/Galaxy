@@ -3150,7 +3150,11 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 54007152c0d318b47b923371caa9b59e, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  moveSpeed: 10
+  sound: {fileID: 8300000, guid: 16e501a76ad0bf24f8b6854556ec083c, type: 3}
+  PistolBullet: {fileID: 2503511347906627806, guid: 9674a56e3c262c444a1ea7693c3351ed, type: 3}
+  fireRate: 2
+  bulletSpeed: 0
+  nextFireTime: 0
   jumpPower: 500
 --- !u!114 &1089446429717748129
 MonoBehaviour:

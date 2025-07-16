@@ -5,13 +5,14 @@ using TMPro;
 using UnityEngine;
 using UnityEngine.SceneManagement;
 using UnityEngine.UI; // Textを使うために必要
+using UnityEngine.InputSystem;
 using UnityEngine.Windows;
 // ★ Random は Unity の Random だと定義する
 using Random = UnityEngine.Random;
 
 public class Move : MonoBehaviour
 {
-
+	[SerializeField] GameObject jumpPrefab; // ジャンプエフェクト
 	private Rigidbody rb;
 	private Transform tf;
 	// アニメーション
@@ -20,14 +21,14 @@ public class Move : MonoBehaviour
 	private float horizontal = 0;
 	private float vertical = 0;
 	private Vector3 velocity;
-	[Header("移動速度"), SerializeField]
 	private float moveSpeed = 10f;
-	private float DashSpeed = 1000f;
+	private float DashSpeed = 100f;
 	public float jumpPower;
 	bool isGround = false;      //地面接地フラグを宣言
 	int jumpCount = 0;     //ジャンプの回数をカウントする変数を宣言
 	Vector3 prevPos;
 	int afterglowTime;
+
 
 	public Vector3 Value
 	{
@@ -46,51 +47,63 @@ public class Move : MonoBehaviour
 	// Update is called once per frame
 	void Update()
     {
+
 		if (Pause.isPaused) return; // ポーズ中は何もしない
 		//if (animator.SetBool("Start_Anim", true).isPaused) return; // ポーズ中は何もしない
-		prevPos = transform.position;
+		/*rb.velocity =
+		Vector3.Scale(rb.velocity, new Vector3(0, 1, 0)) +
+		Vector3.Scale(velocity * moveSpeed, new Vector3(1, 0, 1));*/
 
+		prevPos = transform.position;
 		horizontal = UnityEngine.Input.GetAxis("Horizontal");
 		velocity = new Vector3(0, 0, horizontal).normalized;
-		/*
-		rb.velocity =
-			Vector3.Scale(rb.velocity, new Vector3(0, 1, 0)) +
-			Vector3.Scale(velocity * moveSpeed, new Vector3(1, 0, 1));
-		*/
+
 		if (velocity.magnitude > 0.1f)
 		{
-			animator.SetBool("Walk_Anim", true);
-			float moveZ = UnityEngine.Input.GetAxis("Horizontal") * moveSpeed * Time.deltaTime; // 水平方向の移動
-			transform.position += new Vector3(0, 0, moveZ); // オブジェクトの位置を更新
+			if (UnityEngine.Input.GetKeyDown(KeyCode.JoystickButton1))
+			{
+				animator.SetBool("Walk_Anim", false);
+				animator.SetBool("Roll_Anim", true);
+				float moveZ = UnityEngine.Input.GetAxis("Horizontal") * DashSpeed * Time.deltaTime; // 水平方向の移動
+				transform.position += new Vector3(0, 0, moveZ); // オブジェクトの位置を更新
+			}
+			else
+			{
+				animator.SetBool("Walk_Anim", true);
+				animator.SetBool("Roll_Anim", false);
+				float moveZ = UnityEngine.Input.GetAxis("Horizontal") * moveSpeed * Time.deltaTime; // 水平方向の移動
+				transform.position += new Vector3(0, 0, moveZ); // オブジェクトの位置を更新
+			}
+
 		}
 		else if (horizontal < -0.1f)
 		{
-			animator.SetBool("Walk_Anim", true);
-			float moveZ = UnityEngine.Input.GetAxis("Horizontal") * moveSpeed * Time.deltaTime; // 水平方向の移動
-			transform.position += new Vector3(0, 0, moveZ); // オブジェクトの位置を更新
-		}
-
-		else if (UnityEngine.Input.GetKeyDown(KeyCode.JoystickButton1))
-		{
-			animator.SetBool("Roll_Anim", true);
-			float moveZ = UnityEngine.Input.GetAxis("Horizontal") * DashSpeed * Time.deltaTime; // 水平方向の移動
-			transform.position += new Vector3(0, 0, moveZ); // オブジェクトの位置を更新
+			if (UnityEngine.Input.GetKeyDown(KeyCode.JoystickButton1))
+			{
+				animator.SetBool("Walk_Anim", false);
+				animator.SetBool("Roll_Anim", true);
+				float moveZ = UnityEngine.Input.GetAxis("Horizontal") * DashSpeed * Time.deltaTime; // 水平方向の移動
+				transform.position += new Vector3(0, 0, moveZ); // オブジェクトの位置を更新
+			}
+			else
+			{
+				animator.SetBool("Walk_Anim", true);
+				animator.SetBool("Roll_Anim", false);
+				float moveZ = UnityEngine.Input.GetAxis("Horizontal") * moveSpeed * Time.deltaTime; // 水平方向の移動
+				transform.position += new Vector3(0, 0, moveZ); // オブジェクトの位置を更新
+			}
 		}
 
 		else
 		{
 			animator.SetBool("Walk_Anim", false);
-			animator.SetBool("Roll_Anim", false);
+			animator.SetBool("Roll_Anim", true);
 		}
-
 
 		if (velocity != Vector3.zero)
 		{
 			tf.rotation = Quaternion.LookRotation(velocity);
 		}
-
-
-
 
 		if (UnityEngine.Input.GetKey(KeyCode.JoystickButton2))
 		{
@@ -107,6 +120,7 @@ public class Move : MonoBehaviour
 		{
 			//Rigidbodyに上方向にJumpPowerの力を加え
 			rb.AddForce(transform.up * jumpPower);
+			GameObject explosion = Instantiate(jumpPrefab, transform.position, Quaternion.identity);
 			jumpCount++;    //jumpCount をインクリメント
 		}
 	}
