@@ -10,7 +10,6 @@ GameObject:
   m_Component:
   - component: {fileID: 6149049053935221396}
   - component: {fileID: 1365428557866149279}
-  - component: {fileID: 440108288211556453}
   - component: {fileID: 11690485248204840}
   m_Layer: 0
   m_Name: ChangeScene
@@ -46,21 +45,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 514148283f8e66e4db370ec7174beae2, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
---- !u!114 &440108288211556453
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 847220589840695745}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 14852ea3d19a879458ac8803f6a87bce, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  se: {fileID: 8300000, guid: f16fe5b6a3013634faca3fdac68fd7c0, type: 3}
-  fadePanel: {fileID: 0}
-  fadeDuration: 3
 --- !u!114 &11690485248204840
 MonoBehaviour:
   m_ObjectHideFlags: 0

@@ -17,6 +17,7 @@ public class Shoot : MonoBehaviour
 
 	void Update()
 	{
+
 		if (/*animator.SetBool("Walk_Anim", true) &&*/ Input.GetKeyDown(KeyCode.JoystickButton4) || Input.GetKeyDown(KeyCode.JoystickButton5))
 		{
 			PlayerShoot();
@@ -27,6 +28,8 @@ public class Shoot : MonoBehaviour
 
 	void PlayerShoot()
 	{
+
+		if (Pause.isPaused) return; // ポーズ中は何もしない
 		// 発射音を出す
 		AudioSource.PlayClipAtPoint(sound, transform.position);
 		//弾を生成

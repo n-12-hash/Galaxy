@@ -16,6 +16,8 @@ public class Homing : MonoBehaviour
 
 	void Update()
 	{
+
+		if (Pause.isPaused) return; // ƒ|[ƒY’†‚Í‰½‚à‚µ‚È‚¢
 		if (target)
 		{
 			agent.destination = target.transform.position;

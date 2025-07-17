@@ -22,6 +22,8 @@ public class EnemyScript : MonoBehaviour
 	// Update is called once per frame
 	void Update()
 	{
+
+		if (Pause.isPaused) return; // É|Å[ÉYíÜÇÕâΩÇ‡ÇµÇ»Ç¢
 		if (sensor == false)
 		{
 			//agent.destination = initialposition.transform.position;

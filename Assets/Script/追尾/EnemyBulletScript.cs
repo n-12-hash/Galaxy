@@ -28,11 +28,9 @@ public class EnemyBulletScript : MonoBehaviour
 	// Update is called once per frame
 	void Update()
 	{
-		if (sensor == false)
-		{
 
-		}
-		else
+		if (Pause.isPaused) return; // É|Å[ÉYíÜÇÕâΩÇ‡ÇµÇ»Ç¢
+		if (sensor == true)
 		{
 			transform.LookAt(player.transform);
 			time -= Time.deltaTime;
@@ -42,6 +40,7 @@ public class EnemyBulletScript : MonoBehaviour
 				nextFireTime = Time.time + 1f / fireRate;
 			}
 		}
+
 	}
 
 	void BallShoot()

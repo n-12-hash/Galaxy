@@ -25,6 +25,7 @@ public class BossEnemyShoot : MonoBehaviour
 	// Update is called once per frame
 	void Update()
 	{
+
 		Vector3 pos = transform.position; // 現在の座標
 
 		// プレイヤーが一定の距離に近づいたら
@@ -45,6 +46,7 @@ public class BossEnemyShoot : MonoBehaviour
 
 		void BallShoot()
 		{
+			if (Pause.isPaused) return; // ポーズ中は何もしない
 			//弾を生成
 			GameObject newbullet = Instantiate(bullet, transform.position, Quaternion.identity);
 			newbullet.GetComponent<Rigidbody>().velocity = transform.forward * bulletSpeed;
