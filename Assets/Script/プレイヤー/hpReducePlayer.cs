@@ -78,6 +78,7 @@ public class HpReducePlayer: MonoBehaviour
 		}
 
 		fadePanel.color = endColor;  // フェードが完了したら最終色に設定
+		SceneController.CurrentSceneName();
 		SceneManager.LoadScene("GameOver");
 	}
 }

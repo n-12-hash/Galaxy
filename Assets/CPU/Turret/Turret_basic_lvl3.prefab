@@ -45,10 +45,10 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: fb3a733f3e0e6e34da163211bca24c9e, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  shellPrefab: {fileID: 2503511347906627806, guid: f522e6e8bd27a7a4f80427808bdedc5f, type: 3}
   audioMixer: {fileID: 24100000, guid: dd0e79cd9bb766a4990d2dae892a6819, type: 2}
   audioSource: {fileID: 6706671885619147744}
-  bulletSpeed: 100
+  shellPrefab: {fileID: 2503511347906627806, guid: f522e6e8bd27a7a4f80427808bdedc5f, type: 3}
+  bulletSpeed: 300
   fireRate: 1
   nextFireTime: 5
 --- !u!82 &6706671885619147744
