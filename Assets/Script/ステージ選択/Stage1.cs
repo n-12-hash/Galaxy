@@ -4,15 +4,13 @@ using UnityEngine;
 using UnityEngine.UI;
 using UnityEngine.SceneManagement;
 
+
 public class Stage1 : MonoBehaviour
 {
 	[SerializeField] AudioClip se;
 	public Image fadePanel;             // フェード用のUIパネル（Image）
 	public float fadeDuration;   // フェードの完了にかかる時間
-	/*public void change_button()
-	{
 
-	}*/
 	public void FadeAndLoadScene()
 	{
 		StartCoroutine(FadeOutAndLoadScene());

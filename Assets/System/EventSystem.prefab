@@ -10,8 +10,9 @@ GameObject:
   m_Component:
   - component: {fileID: 3928433935458432419}
   - component: {fileID: 2090184119172225617}
-  - component: {fileID: 4662452206682146252}
   - component: {fileID: 6489631292521556612}
+  - component: {fileID: 5482441722152708356}
+  - component: {fileID: 3951061626568829283}
   m_Layer: 0
   m_Name: EventSystem
   m_TagString: Untagged
@@ -49,18 +50,6 @@ MonoBehaviour:
   m_FirstSelected: {fileID: 0}
   m_sendNavigationEvents: 1
   m_DragThreshold: 10
---- !u!114 &4662452206682146252
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 5070117590259984568}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 1a08f61334072fd40accc5a5c4a15208, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
 --- !u!114 &6489631292521556612
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -91,3 +80,27 @@ MonoBehaviour:
   m_DeselectOnBackgroundClick: 1
   m_PointerBehavior: 0
   m_CursorLockBehavior: 0
+--- !u!114 &5482441722152708356
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 5070117590259984568}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 1a08f61334072fd40accc5a5c4a15208, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+--- !u!114 &3951061626568829283
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 5070117590259984568}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 04f3732a149570e48a49631681eae565, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 

@@ -1,11 +1,13 @@
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.Audio;
 
 public class EnemyShoot : MonoBehaviour
 {
-	public GameObject shellPrefab;
-	public AudioClip sound;
+	[SerializeField] AudioMixer audioMixer;
+	public AudioSource audioSource;
+	public GameObject shellPrefab; // ’e
 	[SerializeField] private float bulletSpeed;
 	[SerializeField] private float fireRate; // ”­ËŠÔŠui•bj
 	[SerializeField] private float nextFireTime; // Ÿ‚É”­Ë‚Å‚«‚éŠÔ
@@ -34,7 +36,7 @@ public class EnemyShoot : MonoBehaviour
 		shellRb.AddForce(transform.forward * bulletSpeed);
 
 		// ”­Ë‰¹‚ğo‚·
-		AudioSource.PlayClipAtPoint(sound, transform.position);
+		AudioSource audioSource;
 
 		// ‚T•bŒã‚É–C’e‚ğ”j‰ó‚·‚é
 		Destroy(shell, 5.0f);
