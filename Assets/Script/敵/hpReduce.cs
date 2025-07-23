@@ -3,7 +3,7 @@ using System.Collections.Generic;
 using Unity.VisualScripting;
 using UnityEngine;
 using UnityEngine.UI;
-//using DG.Tweening;
+using DG.Tweening;
 public class HpReduce : MonoBehaviour
 {
 	//爆発のPrefabを宣言
@@ -32,7 +32,7 @@ public class HpReduce : MonoBehaviour
 	/// <summary> モデルのマテリアルの複製 </summary>
 	private Material _material;
 
-	private Sequence _seq;
+	private DG.Tweening.Sequence _seq;
 
 
 
@@ -79,13 +79,13 @@ public class HpReduce : MonoBehaviour
 	}
 
 
-	/*private void HitFadeBlink(Color color)
+	private void HitFadeBlink(Color color)
 	{
 		_seq?.Kill();
 		_seq = DOTween.Sequence();
 		_seq.Append(DOTween.To(() => Color.white, c => _material.SetColor(PROPERTY_COLOR, c), color, 0.1f));
 		_seq.Append(DOTween.To(() => color, c => _material.SetColor(PROPERTY_COLOR, c), Color.white, 0.1f));
 		_seq.Play();
-	}*/
+	}
 
 }
