@@ -11,6 +11,7 @@ public class EnemyShoot : MonoBehaviour
 	[SerializeField] private float bulletSpeed;
 	[SerializeField] private float fireRate; // 発射間隔（秒）
 	[SerializeField] private float nextFireTime; // 次に発射できる時間
+
 	/*void Start()
 	{
 		// 指定したメソッドを、指定した時間（単位；秒）から、指定した間隔（単位；秒）で繰り返し実行する。

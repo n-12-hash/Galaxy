@@ -13,6 +13,8 @@ GameObject:
   - component: {fileID: 6489631292521556612}
   - component: {fileID: 5482441722152708356}
   - component: {fileID: 3951061626568829283}
+  - component: {fileID: 5254766976593411382}
+  - component: {fileID: 8951580251542661130}
   m_Layer: 0
   m_Name: EventSystem
   m_TagString: Untagged
@@ -104,3 +106,36 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 04f3732a149570e48a49631681eae565, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  audioMixer: {fileID: 0}
+  BGMSlider: {fileID: 0}
+  SESlider: {fileID: 0}
+--- !u!114 &5254766976593411382
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 5070117590259984568}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: c062dcb93a8aeba4aaa5c167878b4e39, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  pauseUI: {fileID: 0}
+  menuFirst: {fileID: 0}
+  optionFirst: {fileID: 0}
+--- !u!114 &8951580251542661130
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 5070117590259984568}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 9647d1ba50edecb4e81dfea06463a6cd, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  pauseUI: {fileID: 0}
+  menuFirst: {fileID: 0}
+  optionFirst: {fileID: 0}
