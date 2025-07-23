@@ -2,13 +2,15 @@ using System.Collections;
 using System.Collections.Generic;
 using Unity.VisualScripting;
 using UnityEngine;
+using UnityEngine.UI;
 using UnityEngine.Audio;
 
 public class Shoot : MonoBehaviour
 {
 
 	private Animator animator;  // アニメーション
-	[SerializeField] AudioMixer audioMixer;
+	[SerializeField] private AudioMixer audioMixer;
+	[SerializeField] private Slider volumeSlider;
 	public AudioSource audioSource;
 	public GameObject PistolBullet; // 弾
 	public float bulletSpeed; //弾の速度
@@ -16,10 +18,24 @@ public class Shoot : MonoBehaviour
 	private float nextFireTime = 5.0f; // 次に発射できる時間
 	Move script; //参照するスクリプト
 
+	/*private void Start()
+	{
+		if (volumeSlider != null)
+		{
+			volumeSlider.onValueChanged.AddListener((value) =>
+			{
+				// valueは0～1の値を期待する。それを保証するための処理
+				value = Mathf.Clamp01(value);
+
+				float decibel = 20f * Mathf.Log10(value);
+				decibel = Mathf.Clamp(decibel, -80f, 0f);
+				audioMixer.SetFloat(audioSource, decibel);
+			});
+		}
+	}*/
 
 	void Update()
 	{
-
 		if (/*animator.SetBool("Walk_Anim", true) &&*/ Input.GetKeyDown(KeyCode.JoystickButton4) || Input.GetKeyDown(KeyCode.JoystickButton5))
 		{
 			PlayerShoot();

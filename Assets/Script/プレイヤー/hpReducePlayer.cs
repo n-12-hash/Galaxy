@@ -8,6 +8,8 @@ using UnityEngine.UI;
 
 public class HpReducePlayer: MonoBehaviour
 {
+	//コライダーをオンオフするためのBoxCollider
+	SphereCollider Muteki;
 	//爆発のPrefabを宣言
 	[SerializeField] GameObject explosionPrefab;
 	[SerializeField] AudioClip se;
@@ -26,8 +28,12 @@ public class HpReducePlayer: MonoBehaviour
 	public Image fadePanel;      // フェード用のUIパネル（Image）
 	public float fadeDuration;   // フェードの完了にかかる時間
 
+	Renderer[] renderers;
+
 	private void Start()
 	{
+		renderers = GetComponentsInChildren<Renderer>();
+
 		hp = maxHp;
 		hpSlider = HPUI.transform.Find("HPBar").GetComponent<Slider>();
 		hpSlider.value = 1f;
@@ -45,11 +51,14 @@ public class HpReducePlayer: MonoBehaviour
 	}
 	void OnTriggerExit(Collider Collision)
 	{
-		if (Collision.gameObject.gameObject.tag == "EnemyBullet"){
+		if (Collision.gameObject.tag == "EnemyBullet"){
 			hp -= 10;
 			hpSlider.value = hp / (float)maxHp;
 			Debug.Log("当たった" + hpSlider.value);
 			Destroy(Collision.gameObject);
+			StartCoroutine(DamageBlink());
+			//当たり判定オフ
+			Muteki.enabled = false;
 		}
 
 		if (hp == 0)
@@ -58,6 +67,20 @@ public class HpReducePlayer: MonoBehaviour
 			GameObject explosion = Instantiate(explosionPrefab, transform.position, Quaternion.identity);
 			Destroy(explosion, 2.0f); //2秒後に爆発を削除
 			StartCoroutine(FadeOutAndLoadScene());
+		}
+	}
+
+	public IEnumerator DamageBlink()
+	{
+		float blinkInterval = 0.1f; // 点滅間隔
+		int blinkCount = 10; // 点滅回数
+		for (int i = 0; i < blinkCount * 2; i++)
+		{
+			foreach (Renderer renderer in renderers)
+			{
+				renderer.enabled = !renderer.enabled;
+			}
+			yield return new WaitForSeconds(blinkInterval);
 		}
 	}
 
@@ -82,3 +105,4 @@ public class HpReducePlayer: MonoBehaviour
 		SceneManager.LoadScene("GameOver");
 	}
 }
+

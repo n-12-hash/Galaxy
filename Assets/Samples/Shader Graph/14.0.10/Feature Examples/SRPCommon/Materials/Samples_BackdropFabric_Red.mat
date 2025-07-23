@@ -34,8 +34,7 @@ Material:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_Name: Samples_BackdropFabric_Red
-  m_Shader: {fileID: -6465566751694194690, guid: 137a9d0b49032c544abaff345d2c4f5c,
-    type: 3}
+  m_Shader: {fileID: -6465566751694194690, guid: 137a9d0b49032c544abaff345d2c4f5c, type: 3}
   m_Parent: {fileID: 2100000, guid: 638589c7422aff14eaa79da6fad69c7c, type: 2}
   m_ModifiedSerializedProperties: 0
   m_ValidKeywords: []
@@ -62,6 +61,7 @@ Material:
     m_Ints: []
     m_Floats:
     - _Anisotropy: -0.5
+    - _BUILTIN_QueueControl: 1
     - _Specular_A: 0.5
     - _Specular_B: 0.5
     m_Colors:
