@@ -57,8 +57,8 @@ public class HpReducePlayer: MonoBehaviour
 			Debug.Log("当たった" + hpSlider.value);
 			Destroy(Collision.gameObject);
 			StartCoroutine(DamageBlink());
-			//当たり判定オフ
-			Muteki.enabled = false;
+			/*//当たり判定オフ
+			Muteki.enabled = false;*/
 		}
 
 		if (hp == 0)
