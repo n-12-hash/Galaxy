@@ -3154,6 +3154,8 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   jumpPrefab: {fileID: 3165994479373110667, guid: 877e0612821746e43a69e6542b3bb5d2, type: 3}
   jumpPower: 500
+  JumpSE: {fileID: 8300000, guid: cd29e0e914c92cf47be969fd23dda1af, type: 3}
+  audioSource: {fileID: 8031790161405815887}
 --- !u!114 &1089446429717748129
 MonoBehaviour:
   m_ObjectHideFlags: 0

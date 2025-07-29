@@ -5,7 +5,8 @@ using UnityEngine.UI;
 using UnityEngine.SceneManagement;
 
 public class StageReStart : MonoBehaviour
-{	public void LoadScene()
+{	
+	public void LoadScene()
 	{
 		SceneManager.LoadScene(SceneManager.GetActiveScene().name);
 	}

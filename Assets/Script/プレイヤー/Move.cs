@@ -28,6 +28,9 @@ public class Move : MonoBehaviour
 	int jumpCount = 0;     //ジャンプの回数をカウントする変数を宣言
 	Vector3 prevPos;
 	int afterglowTime;
+	// SE
+	[SerializeField] private AudioClip JumpSE;
+	public AudioSource audioSource;
 
 
 	public Vector3 Value
@@ -104,6 +107,7 @@ public class Move : MonoBehaviour
 		{
 			//Rigidbodyに上方向にJumpPowerの力を加え
 			rb.AddForce(transform.up * jumpPower);
+			PlaySE(JumpSE);
 			GameObject Jump = Instantiate(jumpPrefab, transform.position, Quaternion.identity);
 			Destroy(Jump, 2.0f); //2秒後に削除
 			jumpCount++;    //jumpCount をインクリメント
@@ -139,6 +143,14 @@ public class Move : MonoBehaviour
 		if (collision.gameObject.tag == "Plane" || collision.gameObject.tag == "Turret")
 		{
 			isGround = false;     //isGround　を false に
+		}
+	}
+
+	private void PlaySE(AudioClip clip)
+	{
+		if (audioSource != null && clip != null)
+		{
+			audioSource.PlayOneShot(clip);
 		}
 	}
 }
