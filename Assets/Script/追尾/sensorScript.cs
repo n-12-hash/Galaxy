@@ -6,7 +6,6 @@ public class SensorScript : MonoBehaviour
 {
 	public GameObject enemy;
 	EnemyScript encs;
-
 	// Start is called before the first frame update
 	void Start()
 	{
