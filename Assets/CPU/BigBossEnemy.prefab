@@ -896,7 +896,10 @@ AudioSource:
   MaxDistance: 500
   Pan2D: 0
   rolloffMode: 0
+<<<<<<< HEAD
   rolloffMode: 1
+=======
+>>>>>>> parent of e4b3910 (敵が謎の突然死をむかえるため修正中)
   BypassEffects: 0
   BypassListenerEffects: 0
   BypassReverbZones: 0
@@ -929,7 +932,7 @@ AudioSource:
     m_Curve:
     - serializedVersion: 3
       time: 0
-      value: 1
+      value: 0
       inSlope: 0
       outSlope: 0
       tangentMode: 0

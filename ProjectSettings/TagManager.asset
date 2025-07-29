@@ -10,7 +10,7 @@ TagManager:
   - Enemy
   - EnemyBullet
   - Turret
-  - Goal
+  - tama
   layers:
   - Default
   - TransparentFX

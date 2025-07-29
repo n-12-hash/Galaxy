@@ -11,9 +11,9 @@ public class StageClear : MonoBehaviour
 	public Image fadePanel;      // フェード用のUIパネル（Image）
 	public float fadeDuration;   // フェードの完了にかかる時間
 
-	void OnTriggerEnter(Collider other)
+	void OnTriggerEnter(Collider collision)
 	{
-		if (other.tag == "Player")
+		if (collision.gameObject.CompareTag("Player")) 
 		{
 			StartCoroutine(FadeOutAndLoadScene());
 		}
