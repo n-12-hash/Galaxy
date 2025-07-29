@@ -9,6 +9,8 @@ public class EnemyBulletScript : MonoBehaviour
 {
 	[SerializeField] GameObject player;
 	[SerializeField] GameObject bullet;
+	[SerializeField] private AudioClip shootSE;
+	public AudioSource audioSource;
 	[SerializeField] private float fireRate; // ”­ËŠÔŠui•bj
 	[SerializeField] private float nextFireTime; // Ÿ‚É”­Ë‚Å‚«‚éŠÔ
 	[SerializeField] private float bulletSpeed;
@@ -52,6 +54,8 @@ public class EnemyBulletScript : MonoBehaviour
 		Rigidbody bulletRigidbod = newbullet.GetComponent<Rigidbody>();
 		// ’e‘¬‚Í©—R‚Éİ’è
 		bulletRigidbod.AddForce(transform.forward * bulletSpeed);
+		// ”­Ë‰¹‚ğo‚·
+		PlaySE(shootSE);
 		//3•bŒã‚É’e‚ğÁ‚·
 		Destroy(newbullet, 3);
 	}
@@ -64,6 +68,13 @@ public class EnemyBulletScript : MonoBehaviour
 	public void Stop()
 	{
 		sensor = false;
+	}
+	private void PlaySE(AudioClip clip)
+	{
+		if (audioSource != null && clip != null)
+		{
+			audioSource.PlayOneShot(clip);
+		}
 	}
 
 }

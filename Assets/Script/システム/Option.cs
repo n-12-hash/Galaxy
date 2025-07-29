@@ -5,7 +5,6 @@ public class Option : MonoBehaviour
 {
 	[SerializeField] private GameObject pauseUI;
 	public static bool isPaused = false; // ← static に変更
-
 	[SerializeField] private GameObject menuFirst;
 	[SerializeField] private GameObject optionFirst;
 
@@ -13,6 +12,7 @@ public class Option : MonoBehaviour
 	{
 		if (Input.GetButtonDown("Pause"))
 		{
+
 			TogglePause();
 		}
 	}
@@ -41,4 +41,5 @@ public class Option : MonoBehaviour
 	{
 		isPaused = false; // シーン開始時に常にポーズ解除
 	}
+
 }

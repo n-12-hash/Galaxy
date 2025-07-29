@@ -3,12 +3,15 @@ using System.Collections.Generic;
 using Unity.VisualScripting;
 using UnityEngine;
 using UnityEngine.UI;
-using DG.Tweening;
+
 public class HpReduce : MonoBehaviour
 {
+
 	//爆発のPrefabを宣言
 	[SerializeField] GameObject explosionPrefab;
-	[SerializeField] AudioClip se;
+	[SerializeField] private AudioClip SE;
+	public AudioSource audioSource;
+	//[SerializeField] AudioClip se;
 	//　敵のMaxHP
 	[SerializeField]
 	private int maxHp;
@@ -34,15 +37,22 @@ public class HpReduce : MonoBehaviour
 			Destroy(Collision.gameObject);
 		}
 
-		if (hp == 0)
+		if (hp <= 0)
 		{
-			Destroy(gameObject); //このオブジェクトを消す
-			AudioSource.PlayClipAtPoint(se, transform.position);//爆発させる
+			Destroy(gameObject); // このオブジェクトを消す
+			PlaySE(SE);
 			GameObject explosion = Instantiate(explosionPrefab, transform.position, Quaternion.identity);
 			Destroy(explosion, 2.0f); //2秒後に爆発を削除
+
 		}
 
 	}
-
+	private void PlaySE(AudioClip clip)
+	{
+		if (audioSource != null && clip != null)
+		{
+			audioSource.PlayOneShot(clip);
+		}
+	}
 
 }

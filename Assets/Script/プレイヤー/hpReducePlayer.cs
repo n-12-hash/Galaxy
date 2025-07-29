@@ -12,7 +12,9 @@ public class HpReducePlayer: MonoBehaviour
 	SphereCollider Muteki;
 	//”š”­‚ÌPrefab‚ğéŒ¾
 	[SerializeField] GameObject explosionPrefab;
-	[SerializeField] AudioClip se;
+	[SerializeField] private AudioClip DamageSE;
+	[SerializeField] private AudioClip SE;
+	public AudioSource audioSource;
 	//@©•ª‚ÌMaxHP
 	[SerializeField]
 	private int maxHp;
@@ -55,18 +57,27 @@ public class HpReducePlayer: MonoBehaviour
 			hp -= 10;
 			hpSlider.value = hp / (float)maxHp;
 			Debug.Log("“–‚½‚Á‚½" + hpSlider.value);
+			PlaySE(DamageSE);
 			Destroy(Collision.gameObject);
 			StartCoroutine(DamageBlink());
 			/*//“–‚½‚è”»’èƒIƒt
 			Muteki.enabled = false;*/
 		}
 
-		if (hp == 0)
+		if (hp <= 0)
 		{
-			AudioSource.PlayClipAtPoint(se, transform.position);//”š”­‚³‚¹‚é
+			PlaySE(SE);//”š”­‚³‚¹‚é
 			GameObject explosion = Instantiate(explosionPrefab, transform.position, Quaternion.identity);
 			Destroy(explosion, 2.0f); //2•bŒã‚É”š”­‚ğíœ
 			StartCoroutine(FadeOutAndLoadScene());
+		}
+	}
+
+	private void PlaySE(AudioClip clip)
+	{
+		if (audioSource != null && clip != null)
+		{
+			audioSource.PlayOneShot(clip);
 		}
 	}
 

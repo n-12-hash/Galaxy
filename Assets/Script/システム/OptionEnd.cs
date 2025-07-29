@@ -13,6 +13,7 @@ public class OptionEnd: MonoBehaviour
 	{
 		if (Input.GetButtonDown("Pause"))
 		{
+
 			TogglePause();
 		}
 	}
@@ -41,4 +42,6 @@ public class OptionEnd: MonoBehaviour
 	{
 		isPaused = false; // シーン開始時に常にポーズ解除
 	}
+
+
 }

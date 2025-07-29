@@ -9,7 +9,8 @@ public class HpReduceBoss : MonoBehaviour
 {
 	//爆発のPrefabを宣言
 	[SerializeField] GameObject explosionPrefab;
-	[SerializeField] AudioClip se;
+	[SerializeField] private AudioClip SE;
+	public AudioSource audioSource;
 	//　敵のMaxHP
 	[SerializeField]
 	private int maxHp;
@@ -50,7 +51,7 @@ public class HpReduceBoss : MonoBehaviour
 		if (hp <= 0)
 		{
 			Destroy(gameObject); //このオブジェクトを消す
-			AudioSource.PlayClipAtPoint(se, transform.position);//爆発させる
+			PlaySE(SE);//爆発させる
 			GameObject explosion = Instantiate(explosionPrefab, transform.position, Quaternion.identity);
 			Destroy(explosion, 2.0f); //2秒後に爆発を削除
 		}
@@ -62,6 +63,14 @@ public class HpReduceBoss : MonoBehaviour
 		if (goal != null)
 		{
 			goal.SetActive(true); // ゴールを表示
+		}
+	}
+
+	private void PlaySE(AudioClip clip)
+	{
+		if (audioSource != null && clip != null)
+		{
+			audioSource.PlayOneShot(clip);
 		}
 	}
 

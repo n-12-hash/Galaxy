@@ -1,11 +1,11 @@
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
-using UnityEngine.Audio;
+
 
 public class EnemyShoot : MonoBehaviour
 {
-	[SerializeField] AudioMixer audioMixer;
+	[SerializeField] private AudioClip shootSE;
 	public AudioSource audioSource;
 	public GameObject shellPrefab; // íe
 	[SerializeField] private float bulletSpeed;
@@ -37,10 +37,17 @@ public class EnemyShoot : MonoBehaviour
 		shellRb.AddForce(transform.forward * bulletSpeed);
 
 		// î≠éÀâπÇèoÇ∑
-		AudioSource audioSource;
+		PlaySE(shootSE);
 
 		// ÇTïbå„Ç…ñCíeÇîjâÛÇ∑ÇÈ
 		Destroy(shell, 5.0f);
+	}
+	private void PlaySE(AudioClip clip)
+	{
+		if (audioSource != null && clip != null)
+		{
+			audioSource.PlayOneShot(clip);
+		}
 	}
 }
 
