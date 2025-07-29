@@ -3,14 +3,13 @@ using System.Collections.Generic;
 using Unity.VisualScripting;
 using UnityEngine;
 using UnityEngine.UI;
-using UnityEngine.Audio;
+using static UnityEditorInternal.ReorderableList;
 
 public class Shoot : MonoBehaviour
 {
 
 	private Animator animator;  // アニメーション
-	[SerializeField] private AudioMixer audioMixer;
-	[SerializeField] private Slider volumeSlider;
+	[SerializeField] private AudioClip shootSE;
 	public AudioSource audioSource;
 	public GameObject PistolBullet; // 弾
 	public float bulletSpeed; //弾の速度
@@ -55,9 +54,16 @@ public class Shoot : MonoBehaviour
 		//キャラクターが向いている方向に弾に力を加える	
 		bulletRigidbody.AddForce(this.transform.forward * bulletSpeed);
 		// 発射音を出す
-		AudioSource audioSource;
+		PlaySE(shootSE);
 		//3秒後に弾を消す
 		Destroy(newbullet, 3);
 	}
 
+	private void PlaySE(AudioClip clip)
+	{
+		if (audioSource != null && clip != null)
+		{
+			audioSource.PlayOneShot(clip);
+		}
+	}
 }

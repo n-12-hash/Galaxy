@@ -14,6 +14,7 @@ GameObject:
   - component: {fileID: 6886218928109548985}
   - component: {fileID: 4076885645078580856}
   - component: {fileID: 2011252376489216654}
+  - component: {fileID: 7677226347790805409}
   m_Layer: 0
   m_Name: ChangeScene
   m_TagString: Untagged
@@ -72,7 +73,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 14852ea3d19a879458ac8803f6a87bce, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  se: {fileID: 8300000, guid: 488c714a386dca648843ec0c9a991efb, type: 3}
+  SE: {fileID: 0}
+  audioSource: {fileID: 0}
   fadePanel: {fileID: 0}
   fadeDuration: 3
 --- !u!114 &4076885645078580856
@@ -87,7 +89,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 00a374532084e124388720992b62e6fb, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  se: {fileID: 8300000, guid: 488c714a386dca648843ec0c9a991efb, type: 3}
+  SE: {fileID: 0}
+  audioSource: {fileID: 0}
   fadePanel: {fileID: 0}
   fadeDuration: 3
 --- !u!114 &2011252376489216654
@@ -102,6 +105,19 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 51c2c05a76c1cad43bdd62ba0ea3f2fd, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  se: {fileID: 8300000, guid: 488c714a386dca648843ec0c9a991efb, type: 3}
+  SE: {fileID: 0}
+  audioSource: {fileID: 0}
   fadePanel: {fileID: 0}
   fadeDuration: 3
+--- !u!114 &7677226347790805409
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 847220589840695745}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: addeabb040092ad4f9eeef8649f3c4dc, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 

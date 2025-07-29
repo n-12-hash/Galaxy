@@ -4,6 +4,8 @@ using UnityEngine.SceneManagement;
 
 public class ResetButton : MonoBehaviour
 {
+	[SerializeField] private AudioClip SE;
+	public AudioSource audioSource;
 	public Button resetButton;
 	public string sceneToReload = "StageSelect";  // リセット後に戻るシーン名
 
@@ -15,6 +17,7 @@ public class ResetButton : MonoBehaviour
 
 	void OnResetClicked()
 	{
+		PlaySE(SE);
 		// 全ステージ解放データを削除
 		PlayerPrefs.DeleteKey("MAX_UNLOCKED_STAGE");
 		// スコア保存もリセットしたいなら
@@ -24,5 +27,13 @@ public class ResetButton : MonoBehaviour
 
 		// 任意のシーンへ移動
 		SceneManager.LoadScene(sceneToReload);
+	}
+
+	private void PlaySE(AudioClip clip)
+	{
+		if (audioSource != null && clip != null)
+		{
+			audioSource.PlayOneShot(clip);
+		}
 	}
 }

@@ -7,14 +7,15 @@ using UnityEngine.SceneManagement;
 
 public class Stage1 : MonoBehaviour
 {
-	[SerializeField] AudioClip se;
+	[SerializeField] private AudioClip SE;
+	public AudioSource audioSource;
 	public Image fadePanel;             // フェード用のUIパネル（Image）
 	public float fadeDuration;   // フェードの完了にかかる時間
 
 	public void FadeAndLoadScene()
 	{
 		StartCoroutine(FadeOutAndLoadScene());
-		AudioSource.PlayClipAtPoint(se, transform.position);
+		PlaySE(SE);
 	}
 
 	private void Start()
@@ -43,7 +44,14 @@ public class Stage1 : MonoBehaviour
 
 		fadePanel.color = endColor;  // フェードが完了したら最終色に設定
 		SceneManager.LoadScene("Stage1");
+	}
 
+	private void PlaySE(AudioClip clip)
+	{
+		if (audioSource != null && clip != null)
+		{
+			audioSource.PlayOneShot(clip);
+		}
 	}
 }
 

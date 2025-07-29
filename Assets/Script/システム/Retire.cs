@@ -1,22 +1,25 @@
-using UnityEngine.EventSystems;
+using UnityEditor.Rendering.LookDev;
 using UnityEngine;
+using UnityEngine.EventSystems;
+using UnityEngine.SceneManagement;
+using UnityEngine.UI;
 
-public class OptionEnd: MonoBehaviour
+public class Retire : MonoBehaviour
 {
 	[SerializeField] private GameObject pauseUI;
 	public static bool isPaused = false; // Å© static Ç…ïœçX
-
-	[SerializeField] private GameObject menuFirst;
 	[SerializeField] private GameObject optionFirst;
 
-	void Update()
-	{
-		if (Input.GetButtonDown("Pause"))
-		{
 
+	void OnTriggerEnter(Collider other)
+	{
+
+		if (other.tag == "Player")
+		{
 			TogglePause();
 		}
 	}
+
 
 	public void TogglePause()
 	{
@@ -35,7 +38,6 @@ public class OptionEnd: MonoBehaviour
 		isPaused = false;
 		pauseUI.SetActive(false);
 		EventSystem.current.SetSelectedGameObject(null);
-		EventSystem.current.SetSelectedGameObject(menuFirst);
 	}
 
 	void Awake()

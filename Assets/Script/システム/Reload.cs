@@ -1,14 +1,17 @@
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
-using UnityEngine.UI;
 using UnityEngine.SceneManagement;
 
-public class StageReStart : MonoBehaviour
-{	
+public class Reload : MonoBehaviour
+{
+	void Update()
+	{
+		LoadScene();
+	}
+	// Update is called once per frame
 	public void LoadScene()
 	{
-		SceneManager.LoadScene(SceneManager.GetActiveScene().name);
+		SceneManager.LoadScene("Stage1");
 	}
 }
-

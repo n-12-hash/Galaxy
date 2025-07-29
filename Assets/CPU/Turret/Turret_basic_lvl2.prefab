@@ -185,7 +185,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: fb3a733f3e0e6e34da163211bca24c9e, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  audioMixer: {fileID: 24100000, guid: dd0e79cd9bb766a4990d2dae892a6819, type: 2}
+  shootSE: {fileID: 8300000, guid: 031663176d7e67c45a611c8931f7367f, type: 3}
   audioSource: {fileID: 8790051410831862238}
   shellPrefab: {fileID: 2503511347906627806, guid: f522e6e8bd27a7a4f80427808bdedc5f, type: 3}
   bulletSpeed: 200
@@ -201,9 +201,9 @@ AudioSource:
   m_Enabled: 1
   serializedVersion: 4
   OutputAudioMixerGroup: {fileID: 6759572087415909571, guid: dd0e79cd9bb766a4990d2dae892a6819, type: 2}
-  m_audioClip: {fileID: 8300000, guid: 16e501a76ad0bf24f8b6854556ec083c, type: 3}
+  m_audioClip: {fileID: 0}
   m_PlayOnAwake: 0
-  m_Volume: 1
+  m_Volume: 0.5
   m_Pitch: 1
   Loop: 0
   Mute: 0
