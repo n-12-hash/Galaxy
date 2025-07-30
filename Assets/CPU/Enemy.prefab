@@ -464,7 +464,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 400002, guid: cc633396b5f95da4b916357a5508ee4f, type: 3}
       propertyPath: m_LocalPosition.z
-      value: 0
+      value: 0.2415
       objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
@@ -496,7 +496,7 @@ PrefabInstance:
       addedObject: {fileID: 4922231322388309585}
     - targetCorrespondingSourceObject: {fileID: 100002, guid: cc633396b5f95da4b916357a5508ee4f, type: 3}
       insertIndex: -1
-      addedObject: {fileID: 324546929325162494}
+      addedObject: {fileID: 1050207460383846266}
   m_SourcePrefab: {fileID: 100100000, guid: cc633396b5f95da4b916357a5508ee4f, type: 3}
 --- !u!1 &9076049148163287613 stripped
 GameObject:
@@ -575,8 +575,9 @@ MonoBehaviour:
   SE: {fileID: 8300000, guid: 493d3db62b6b2f74e90e5d582e56af44, type: 3}
   audioSource: {fileID: 1943255396211041276}
   maxHp: 10
-  hp: 0
-  HPUI: {fileID: 2039589595811835340}
+  hp: 10
+  HPUI: {fileID: 7207947558112635227}
+  hpSlider: {fileID: 8083127439697432251}
 --- !u!65 &8672130719957199014
 BoxCollider:
   m_ObjectHideFlags: 0
@@ -654,7 +655,7 @@ AudioSource:
     m_Curve:
     - serializedVersion: 3
       time: 0
-      value: 0
+      value: 1
       inSlope: 0
       outSlope: 0
       tangentMode: 0
@@ -717,8 +718,8 @@ MonoBehaviour:
   bulletSpeed: 1000
   fireRate: 0.2
   nextFireTime: 10
---- !u!64 &324546929325162494
-MeshCollider:
+--- !u!65 &1050207460383846266
+BoxCollider:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInstance: {fileID: 0}
@@ -735,10 +736,9 @@ MeshCollider:
   m_IsTrigger: 0
   m_ProvidesContacts: 0
   m_Enabled: 1
-  serializedVersion: 5
-  m_Convex: 1
-  m_CookingOptions: 30
-  m_Mesh: {fileID: 0}
+  serializedVersion: 3
+  m_Size: {x: 0.88306725, y: 0.7070128, z: 1.1065387}
+  m_Center: {x: 0.029384991, y: 0.008377284, z: -0.49492916}
 --- !u!4 &9076049148163520029 stripped
 Transform:
   m_CorrespondingSourceObject: {fileID: 400000, guid: cc633396b5f95da4b916357a5508ee4f, type: 3}

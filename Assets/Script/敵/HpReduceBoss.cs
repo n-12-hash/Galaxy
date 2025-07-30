@@ -39,7 +39,7 @@ public class HpReduceBoss : MonoBehaviour
 	{
 		this.hp = hp;
 	}
-	void OnTriggerExit(Collider Collision)
+	void OnTriggerEnter(Collider Collision)
 	{
 		if (Collision.gameObject.tag == "Bullet"){
 			hp -= 10;

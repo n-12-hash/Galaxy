@@ -17,17 +17,26 @@ public class EnemyBulletScript : MonoBehaviour
 	private float time = 1.0f;
 	public Transform Target;
 	//public Transform initialposition;//random;
-	NavMeshAgent agent;
 	bool sensor;
 
 
 	// Start is called before the first frame update
-	void Start()
-	{
-		agent = GetComponent<NavMeshAgent>();
-	}
 
 	// Update is called once per frame
+
+	void Start()
+	{
+		if (player == null)
+		{
+			player = GameObject.FindWithTag("Player");
+			if (player == null)
+			{
+				Debug.LogError("Player が見つかりません！タグ 'Player' を持つオブジェクトをシーンに配置してください。");
+			}
+		}
+	}
+
+
 	void Update()
 	{
 

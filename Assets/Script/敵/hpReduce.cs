@@ -10,7 +10,7 @@ public class HpReduce : MonoBehaviour
 	//爆発のPrefabを宣言
 	[SerializeField] GameObject explosionPrefab;
 	[SerializeField] private AudioClip SE;
-	[SerializeField] private AudioSource audioSource;
+	public AudioSource audioSource;
 
 	//[SerializeField] AudioClip se;
 	//　敵のMaxHP
@@ -22,14 +22,22 @@ public class HpReduce : MonoBehaviour
 	//　HP表示用UI
 	[SerializeField]
 	private GameObject HPUI;
+
 	//　HP表示用スライダー
-	private Slider hpSlider;
+	[SerializeField] private Slider hpSlider;
+
+
+	void Start()
+	{
+		hpSlider = HPUI.GetComponent<Slider>();
+	}
 
 	public void SetHp(int hp)
 	{
+		Debug.Log("2");
 		this.hp = hp;
 	}
-	void OnTriggerExit(Collider Collision)
+	void OnTriggerEnter(Collider Collision)
 	{
 		if (Collision.gameObject.tag == "Bullet"){
 			hp -= 10;
@@ -40,6 +48,7 @@ public class HpReduce : MonoBehaviour
 
 		if (hp <= 0)
 		{
+			Debug.Log("1");
 			Destroy(gameObject); // このオブジェクトを消す
 			PlaySE(SE);
 			GameObject explosion = Instantiate(explosionPrefab, transform.position, Quaternion.identity);

@@ -79,24 +79,19 @@ public class Move : MonoBehaviour
 		{
 			animator.SetBool("Walk_Anim", false);
 		}
-		/*if (velocity.magnitude > 0.1f && UnityEngine.Input.GetKeyDown(KeyCode.JoystickButton1))
+
+		if (UnityEngine.Input.GetKeyDown(KeyCode.JoystickButton1))
 		{
 			animator.SetBool("Roll_Anim", true);
 			float moveZ = UnityEngine.Input.GetAxis("Horizontal") * DashSpeed * Time.deltaTime; // 水平方向の移動
 			transform.position += new Vector3(0, 0, moveZ); // オブジェクトの位置を更新
 
-		}
-		else if (horizontal < -0.1f && UnityEngine.Input.GetKeyDown(KeyCode.JoystickButton1))
-		{
-			animator.SetBool("Roll_Anim", true);
-			float moveZ = UnityEngine.Input.GetAxis("Horizontal") * DashSpeed * Time.deltaTime; // 水平方向の移動
-			transform.position += new Vector3(0, 0, moveZ); // オブジェクトの位置を更新
 		}
 
 		else
 		{
 			animator.SetBool("Roll_Anim", false);
-		}*/
+		}
 
 		if (velocity != Vector3.zero)
 		{

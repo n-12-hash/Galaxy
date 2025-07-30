@@ -775,7 +775,7 @@ PrefabInstance:
     - target: {fileID: 578116903618893015, guid: ec535572a10f90940b7c815863104afd, type: 3}
       propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[0].m_Target
       value: 
-      objectReference: {fileID: 1789986932}
+      objectReference: {fileID: 1652261672}
     - target: {fileID: 578116903618893015, guid: ec535572a10f90940b7c815863104afd, type: 3}
       propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[0].m_MethodName
       value: ResumeGame
@@ -1520,7 +1520,7 @@ PrefabInstance:
     - target: {fileID: 6948592135059433949, guid: 0d96d1fa5e94ade4f96e9532513a7a10, type: 3}
       propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[0].m_Target
       value: 
-      objectReference: {fileID: 1789986933}
+      objectReference: {fileID: 1652261673}
     - target: {fileID: 6948592135059433949, guid: 0d96d1fa5e94ade4f96e9532513a7a10, type: 3}
       propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[0].m_MethodName
       value: TogglePause
@@ -1774,28 +1774,36 @@ AudioSource:
     m_PreInfinity: 2
     m_PostInfinity: 2
     m_RotationOrder: 4
---- !u!114 &1789986932 stripped
+--- !u!114 &1652261672
 MonoBehaviour:
-  m_CorrespondingSourceObject: {fileID: 8951580251542661130, guid: 05d05244544792446b6106b27d3ddad2, type: 3}
-  m_PrefabInstance: {fileID: 497586264}
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 1511102683}
+  m_GameObject: {fileID: 82709173}
   m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: 9647d1ba50edecb4e81dfea06463a6cd, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
---- !u!114 &1789986933 stripped
+  pauseUI: {fileID: 847111349}
+  menuFirst: {fileID: 871645254}
+  optionFirst: {fileID: 1279804788}
+--- !u!114 &1652261673
 MonoBehaviour:
-  m_CorrespondingSourceObject: {fileID: 5254766976593411382, guid: 05d05244544792446b6106b27d3ddad2, type: 3}
-  m_PrefabInstance: {fileID: 497586264}
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 1511102683}
+  m_GameObject: {fileID: 82709173}
   m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: c062dcb93a8aeba4aaa5c167878b4e39, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  pauseUI: {fileID: 890903291}
+  menuFirst: {fileID: 2036275883}
+  optionFirst: {fileID: 1942421149}
 --- !u!82 &1789986939
 AudioSource:
   m_ObjectHideFlags: 0
@@ -1931,7 +1939,7 @@ PrefabInstance:
     - target: {fileID: 8587915679454917632, guid: c917c9f0d975b6e41ba42430ec351489, type: 3}
       propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[0].m_Target
       value: 
-      objectReference: {fileID: 1789986932}
+      objectReference: {fileID: 1652261672}
     - target: {fileID: 8587915679454917632, guid: c917c9f0d975b6e41ba42430ec351489, type: 3}
       propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[0].m_MethodName
       value: TogglePause
@@ -2081,7 +2089,7 @@ PrefabInstance:
     - target: {fileID: 578116903618893015, guid: ec535572a10f90940b7c815863104afd, type: 3}
       propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[0].m_Target
       value: 
-      objectReference: {fileID: 1789986933}
+      objectReference: {fileID: 1652261673}
     - target: {fileID: 578116903618893015, guid: ec535572a10f90940b7c815863104afd, type: 3}
       propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[0].m_MethodName
       value: ResumeGame
@@ -2089,6 +2097,22 @@ PrefabInstance:
     - target: {fileID: 578116903618893015, guid: ec535572a10f90940b7c815863104afd, type: 3}
       propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[0].m_TargetAssemblyTypeName
       value: Option, Assembly-CSharp
+      objectReference: {fileID: 0}
+    - target: {fileID: 606198050612055160, guid: ec535572a10f90940b7c815863104afd, type: 3}
+      propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.size
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 606198050612055160, guid: ec535572a10f90940b7c815863104afd, type: 3}
+      propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[0].m_Mode
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 606198050612055160, guid: ec535572a10f90940b7c815863104afd, type: 3}
+      propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[0].m_Target
+      value: 
+      objectReference: {fileID: 82709173}
+    - target: {fileID: 606198050612055160, guid: ec535572a10f90940b7c815863104afd, type: 3}
+      propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[0].m_CallState
+      value: 2
       objectReference: {fileID: 0}
     - target: {fileID: 1337247496759606806, guid: ec535572a10f90940b7c815863104afd, type: 3}
       propertyPath: m_fontAsset
@@ -2258,7 +2282,7 @@ MonoBehaviour:
   SE: {fileID: 8300000, guid: 488c714a386dca648843ec0c9a991efb, type: 3}
   audioSource: {fileID: 1652261671}
   resetButton: {fileID: 1942421148}
-  sceneToReload: StageSelect
+  sceneToReload: Title
 --- !u!1 &2036275883 stripped
 GameObject:
   m_CorrespondingSourceObject: {fileID: 8039621462001980214, guid: 0d96d1fa5e94ade4f96e9532513a7a10, type: 3}
@@ -2370,6 +2394,12 @@ PrefabInstance:
     - targetCorrespondingSourceObject: {fileID: 847220589840695745, guid: 5f1d53d5cbd16164ea1b2bc185bb0ebb, type: 3}
       insertIndex: -1
       addedObject: {fileID: 1652261671}
+    - targetCorrespondingSourceObject: {fileID: 847220589840695745, guid: 5f1d53d5cbd16164ea1b2bc185bb0ebb, type: 3}
+      insertIndex: -1
+      addedObject: {fileID: 1652261673}
+    - targetCorrespondingSourceObject: {fileID: 847220589840695745, guid: 5f1d53d5cbd16164ea1b2bc185bb0ebb, type: 3}
+      insertIndex: -1
+      addedObject: {fileID: 1652261672}
   m_SourcePrefab: {fileID: 100100000, guid: 5f1d53d5cbd16164ea1b2bc185bb0ebb, type: 3}
 --- !u!1660057539 &9223372036854775807
 SceneRoots:

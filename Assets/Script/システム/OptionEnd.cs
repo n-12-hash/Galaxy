@@ -11,7 +11,7 @@ public class OptionEnd: MonoBehaviour
 
 	void Update()
 	{
-		if (Input.GetButtonDown("Pause"))
+		if (Input.GetKeyDown(KeyCode.JoystickButton6) || Input.GetButtonDown("AnotherPause"))
 		{
 
 			TogglePause();

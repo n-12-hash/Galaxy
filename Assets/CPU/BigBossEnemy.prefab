@@ -49,7 +49,7 @@ BoxCollider:
     serializedVersion: 2
     m_Bits: 0
   m_LayerOverridePriority: 0
-  m_IsTrigger: 0
+  m_IsTrigger: 1
   m_ProvidesContacts: 0
   m_Enabled: 1
   serializedVersion: 3
@@ -577,8 +577,8 @@ BoxCollider:
   m_ProvidesContacts: 0
   m_Enabled: 1
   serializedVersion: 3
-  m_Size: {x: 3.894751, y: 2.9945855, z: 7.72937}
-  m_Center: {x: -0.05337677, y: 0.34041628, z: -3.364685}
+  m_Size: {x: 3.894751, y: 5.3782725, z: 10.602027}
+  m_Center: {x: -0.05337677, y: 1.53226, z: -4.8010135}
 --- !u!114 &2238446990575729249
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -718,9 +718,6 @@ PrefabInstance:
       addedObject: {fileID: 5708231092892193873}
     - targetCorrespondingSourceObject: {fileID: 100000, guid: 28723f10c2a8e094a9351e892f5271b8, type: 3}
       insertIndex: -1
-      addedObject: {fileID: 2405985621178109444}
-    - targetCorrespondingSourceObject: {fileID: 100000, guid: 28723f10c2a8e094a9351e892f5271b8, type: 3}
-      insertIndex: -1
       addedObject: {fileID: 6100346992546995094}
     - targetCorrespondingSourceObject: {fileID: 100000, guid: 28723f10c2a8e094a9351e892f5271b8, type: 3}
       insertIndex: -1
@@ -752,28 +749,6 @@ BoxCollider:
   serializedVersion: 3
   m_Size: {x: 3.5754952, y: 3.3034472, z: 3.9624016}
   m_Center: {x: -0.000000059604645, y: 0.1767767, z: 0.00000011920929}
---- !u!195 &2405985621178109444
-NavMeshAgent:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 5833046118775824307}
-  m_Enabled: 1
-  m_AgentTypeID: 0
-  m_Radius: 2
-  m_Speed: 0
-  m_Acceleration: 8
-  avoidancePriority: 50
-  m_AngularSpeed: 120
-  m_StoppingDistance: 0
-  m_AutoTraverseOffMeshLink: 0
-  m_AutoBraking: 1
-  m_AutoRepath: 0
-  m_Height: 3
-  m_BaseOffset: 1.5
-  m_WalkableMask: 0
-  m_ObstacleAvoidanceType: 4
 --- !u!114 &6100346992546995094
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -816,7 +791,7 @@ AudioSource:
   MinDistance: 1
   MaxDistance: 500
   Pan2D: 0
-  rolloffMode: 0
+  rolloffMode: 1
   BypassEffects: 0
   BypassListenerEffects: 0
   BypassReverbZones: 0
@@ -849,7 +824,7 @@ AudioSource:
     m_Curve:
     - serializedVersion: 3
       time: 0
-      value: 0
+      value: 1
       inSlope: 0
       outSlope: 0
       tangentMode: 0

@@ -23,5 +23,11 @@ EditorBuildSettings:
   - enabled: 1
     path: Assets/Scenes/GameClear.unity
     guid: e14e49864ac14484db159123f913c4d5
+  - enabled: 1
+    path: Assets/Scenes/StageSelect.unity
+    guid: 2c2866554c0a5274c8e35c90b1586e39
+  - enabled: 1
+    path: Assets/Scenes/Stage2.unity
+    guid: d1bea88b734c0ae45851b09d73abf228
   m_configObjects:
     com.unity.input.settings: {fileID: 11400000, guid: eefd0d613cc7ad8498c62d3a24446cb8, type: 2}

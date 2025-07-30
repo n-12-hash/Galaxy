@@ -11,7 +11,7 @@ public class Pause : MonoBehaviour
 
 	void Update()
 	{
-		if (Input.GetKeyDown(KeyCode.Escape) || Input.GetButtonDown("Pause"))
+		if (Input.GetButtonDown("Pause"))
 		{
 			TogglePause();
 		}
