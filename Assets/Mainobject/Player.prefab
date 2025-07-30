@@ -2446,7 +2446,6 @@ GameObject:
   - component: {fileID: 5252979851994217388}
   - component: {fileID: 5225106695887912642}
   - component: {fileID: 5233810599443533824}
-  - component: {fileID: 6548098852075337495}
   m_Layer: 0
   m_Name: body
   m_TagString: Untagged
@@ -2520,28 +2519,6 @@ MeshRenderer:
   m_SortingLayer: 0
   m_SortingOrder: 0
   m_AdditionalVertexStreams: {fileID: 0}
---- !u!64 &6548098852075337495
-MeshCollider:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 5256633468817462260}
-  m_Material: {fileID: 0}
-  m_IncludeLayers:
-    serializedVersion: 2
-    m_Bits: 0
-  m_ExcludeLayers:
-    serializedVersion: 2
-    m_Bits: 0
-  m_LayerOverridePriority: 0
-  m_IsTrigger: 0
-  m_ProvidesContacts: 0
-  m_Enabled: 1
-  serializedVersion: 5
-  m_Convex: 1
-  m_CookingOptions: 30
-  m_Mesh: {fileID: 4300078, guid: bff429107601444d59c67940e6ad78c4, type: 3}
 --- !u!1 &5256680143718439194
 GameObject:
   m_ObjectHideFlags: 0
@@ -3066,7 +3043,6 @@ GameObject:
   - component: {fileID: 7582740244882587187}
   - component: {fileID: 1089446429717748129}
   - component: {fileID: 7745445998872178892}
-  - component: {fileID: 7609529309099295041}
   - component: {fileID: 8031790161405815887}
   m_Layer: 0
   m_Name: Player
@@ -3196,27 +3172,6 @@ SphereCollider:
   serializedVersion: 3
   m_Radius: 0.05
   m_Center: {x: 0, y: 0.07, z: 0}
---- !u!65 &7609529309099295041
-BoxCollider:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 5256757886777365736}
-  m_Material: {fileID: 0}
-  m_IncludeLayers:
-    serializedVersion: 2
-    m_Bits: 0
-  m_ExcludeLayers:
-    serializedVersion: 2
-    m_Bits: 0
-  m_LayerOverridePriority: 0
-  m_IsTrigger: 0
-  m_ProvidesContacts: 0
-  m_Enabled: 1
-  serializedVersion: 3
-  m_Size: {x: 0.053826313, y: 0.07461566, z: 0.09220405}
-  m_Center: {x: -0.0035435676, y: 0.07444733, z: -0.002841121}
 --- !u!82 &8031790161405815887
 AudioSource:
   m_ObjectHideFlags: 0

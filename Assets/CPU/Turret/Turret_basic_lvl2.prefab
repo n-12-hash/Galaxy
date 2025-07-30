@@ -44,7 +44,7 @@ GameObject:
   - component: {fileID: 1501450488896569737}
   - component: {fileID: 7223760833588679854}
   - component: {fileID: 6437867362506206443}
-  - component: {fileID: 5802864551557718278}
+  - component: {fileID: 6381178397771026658}
   m_Layer: 0
   m_Name: TBasic_lvl1_bot
   m_TagString: Untagged
@@ -118,7 +118,7 @@ MeshRenderer:
   m_SortingLayer: 0
   m_SortingOrder: 0
   m_AdditionalVertexStreams: {fileID: 0}
---- !u!64 &5802864551557718278
+--- !u!64 &6381178397771026658
 MeshCollider:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
@@ -137,7 +137,7 @@ MeshCollider:
   m_ProvidesContacts: 0
   m_Enabled: 1
   serializedVersion: 5
-  m_Convex: 1
+  m_Convex: 0
   m_CookingOptions: 30
   m_Mesh: {fileID: 4300000, guid: c8507fecf542c8c409e60220a3f0283a, type: 3}
 --- !u!1 &5781424269220622006
@@ -298,7 +298,7 @@ GameObject:
   - component: {fileID: 3640135411830771025}
   - component: {fileID: 550214705056633628}
   - component: {fileID: 9030350343461466612}
-  - component: {fileID: 6017763623622208077}
+  - component: {fileID: 1982631436319455821}
   m_Layer: 0
   m_Name: TBasic_lvl1_top
   m_TagString: Untagged
@@ -371,7 +371,7 @@ MeshRenderer:
   m_SortingLayer: 0
   m_SortingOrder: 0
   m_AdditionalVertexStreams: {fileID: 0}
---- !u!64 &6017763623622208077
+--- !u!64 &1982631436319455821
 MeshCollider:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
@@ -390,6 +390,6 @@ MeshCollider:
   m_ProvidesContacts: 0
   m_Enabled: 1
   serializedVersion: 5
-  m_Convex: 1
+  m_Convex: 0
   m_CookingOptions: 30
   m_Mesh: {fileID: 4300000, guid: 45dced71007592c41bcdd3a43ba7644d, type: 3}

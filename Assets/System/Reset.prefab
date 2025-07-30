@@ -759,7 +759,6 @@ GameObject:
   - component: {fileID: 7156162261494870988}
   - component: {fileID: 3273130104894928508}
   - component: {fileID: 606198050612055160}
-  - component: {fileID: 41953357130403811}
   - component: {fileID: 7018640531650433016}
   m_Layer: 5
   m_Name: "\u306F\u3044"
@@ -870,20 +869,6 @@ MonoBehaviour:
   m_OnClick:
     m_PersistentCalls:
       m_Calls: []
---- !u!114 &41953357130403811
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 8826004650477265502}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 3f9a96a208b99e4449a40846be666d81, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  resetButton: {fileID: 606198050612055160}
-  sceneToReload: Title
 --- !u!95 &7018640531650433016
 Animator:
   serializedVersion: 5
