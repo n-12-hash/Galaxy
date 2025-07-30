@@ -394,7 +394,6 @@ GameObject:
   - component: {fileID: 2623286223105417929}
   - component: {fileID: 2599485385365658462}
   - component: {fileID: 7759883664432188161}
-  - component: {fileID: 8766753614620813174}
   - component: {fileID: 3940334649923218155}
   - component: {fileID: 3299842028107174647}
   - component: {fileID: 8388417576713805130}
@@ -493,28 +492,6 @@ Animator:
   m_AllowConstantClipSamplingOptimization: 1
   m_KeepAnimatorStateOnDisable: 0
   m_WriteDefaultValuesOnDisable: 0
---- !u!64 &8766753614620813174
-MeshCollider:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 6995819465348645452}
-  m_Material: {fileID: 0}
-  m_IncludeLayers:
-    serializedVersion: 2
-    m_Bits: 0
-  m_ExcludeLayers:
-    serializedVersion: 2
-    m_Bits: 0
-  m_LayerOverridePriority: 0
-  m_IsTrigger: 0
-  m_ProvidesContacts: 0
-  m_Enabled: 1
-  serializedVersion: 5
-  m_Convex: 0
-  m_CookingOptions: 30
-  m_Mesh: {fileID: 4300000, guid: e497b40124d368543a1971d44952f2d5, type: 3}
 --- !u!65 &3940334649923218155
 BoxCollider:
   m_ObjectHideFlags: 0
@@ -644,6 +621,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 3c8be84b1fd0d1b45a72230338f58f0a, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  SE: {fileID: 8300000, guid: 10ae805c323c5bb4d99ea05450fa4658, type: 3}
+  audioSource: {fileID: 3299842028107174647}
 --- !u!1 &8491632295662166229
 GameObject:
   m_ObjectHideFlags: 0

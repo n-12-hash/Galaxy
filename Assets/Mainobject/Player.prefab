@@ -725,7 +725,7 @@ GameObject:
   - component: {fileID: 5258233286872150764}
   - component: {fileID: 5225066366189880798}
   - component: {fileID: 5233761558455093480}
-  - component: {fileID: 4478584949792191642}
+  - component: {fileID: 7545735334178918277}
   m_Layer: 0
   m_Name: rear_plate
   m_TagString: Untagged
@@ -798,8 +798,8 @@ MeshRenderer:
   m_SortingLayer: 0
   m_SortingOrder: 0
   m_AdditionalVertexStreams: {fileID: 0}
---- !u!64 &4478584949792191642
-MeshCollider:
+--- !u!65 &7545735334178918277
+BoxCollider:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInstance: {fileID: 0}
@@ -816,10 +816,9 @@ MeshCollider:
   m_IsTrigger: 0
   m_ProvidesContacts: 0
   m_Enabled: 1
-  serializedVersion: 5
-  m_Convex: 1
-  m_CookingOptions: 30
-  m_Mesh: {fileID: 4300010, guid: bff429107601444d59c67940e6ad78c4, type: 3}
+  serializedVersion: 3
+  m_Size: {x: 0.041181732, y: 0.064695254, z: 0.027032394}
+  m_Center: {x: 1.6325283e-10, y: 0.02118538, z: -0.0007260354}
 --- !u!1 &5255963962521865984
 GameObject:
   m_ObjectHideFlags: 0
@@ -2340,7 +2339,7 @@ GameObject:
   - component: {fileID: 5258405986613385202}
   - component: {fileID: 5225111436708026680}
   - component: {fileID: 5234366786998236564}
-  - component: {fileID: 7468093140046869774}
+  - component: {fileID: 8944152626972299771}
   m_Layer: 0
   m_Name: right_plate
   m_TagString: Untagged
@@ -2413,8 +2412,8 @@ MeshRenderer:
   m_SortingLayer: 0
   m_SortingOrder: 0
   m_AdditionalVertexStreams: {fileID: 0}
---- !u!64 &7468093140046869774
-MeshCollider:
+--- !u!65 &8944152626972299771
+BoxCollider:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInstance: {fileID: 0}
@@ -2431,10 +2430,9 @@ MeshCollider:
   m_IsTrigger: 0
   m_ProvidesContacts: 0
   m_Enabled: 1
-  serializedVersion: 5
-  m_Convex: 1
-  m_CookingOptions: 30
-  m_Mesh: {fileID: 4300036, guid: bff429107601444d59c67940e6ad78c4, type: 3}
+  serializedVersion: 3
+  m_Size: {x: 0.06787628, y: 0.016268058, z: 0.04122922}
+  m_Center: {x: 0.01974277, y: 0.0012369901, z: -0.00003826778}
 --- !u!1 &5256633468817462260
 GameObject:
   m_ObjectHideFlags: 0
@@ -3129,6 +3127,8 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   jumpPrefab: {fileID: 3165994479373110667, guid: 877e0612821746e43a69e6542b3bb5d2, type: 3}
+  SE: {fileID: 8300000, guid: 62c53b58389c6274c90c2a29da1ced21, type: 3}
+  audioSource: {fileID: 8031790161405815887}
   jumpPower: 500
 --- !u!114 &1089446429717748129
 MonoBehaviour:
@@ -3445,7 +3445,7 @@ GameObject:
   - component: {fileID: 5258241769728245758}
   - component: {fileID: 5225131810046657564}
   - component: {fileID: 5235275639434768446}
-  - component: {fileID: 1129705844969664048}
+  - component: {fileID: 2176413860878317407}
   m_Layer: 0
   m_Name: left_plate
   m_TagString: Untagged
@@ -3518,8 +3518,8 @@ MeshRenderer:
   m_SortingLayer: 0
   m_SortingOrder: 0
   m_AdditionalVertexStreams: {fileID: 0}
---- !u!64 &1129705844969664048
-MeshCollider:
+--- !u!65 &2176413860878317407
+BoxCollider:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInstance: {fileID: 0}
@@ -3536,10 +3536,9 @@ MeshCollider:
   m_IsTrigger: 0
   m_ProvidesContacts: 0
   m_Enabled: 1
-  serializedVersion: 5
-  m_Convex: 1
-  m_CookingOptions: 30
-  m_Mesh: {fileID: 4300062, guid: bff429107601444d59c67940e6ad78c4, type: 3}
+  serializedVersion: 3
+  m_Size: {x: 0.030606478, y: 0.06469189, z: 0.03607633}
+  m_Center: {x: -0.0031706064, y: 0.021185316, z: 0.004488203}
 --- !u!1 &5256775542633292584
 GameObject:
   m_ObjectHideFlags: 0

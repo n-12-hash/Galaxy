@@ -4,6 +4,8 @@ using UnityEngine;
 
 public class DoorCon : MonoBehaviour
 {
+	[SerializeField] private AudioClip SE;
+	[SerializeField] private AudioSource audioSource;
 	Animator animator;
 	// Start is called before the first frame update
 	void Start()
@@ -24,6 +26,7 @@ public class DoorCon : MonoBehaviour
 		{
 			//character_nearbyをtrueにしてドアを開ける
 			animator.SetBool("character_nearby", true);
+			PlaySE(SE);
 		}
 	}
 	void OnTriggerExit(Collider other)
@@ -33,6 +36,14 @@ public class DoorCon : MonoBehaviour
 		{
 			//character_nearbyをtrueにしてドアを閉める
 			animator.SetBool("character_nearby", false);
+			PlaySE(SE);
+		}
+	}
+	private void PlaySE(AudioClip clip)
+	{
+		if (audioSource != null && clip != null)
+		{
+			audioSource.PlayOneShot(clip);
 		}
 	}
 }

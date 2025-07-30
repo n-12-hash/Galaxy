@@ -10,7 +10,8 @@ public class HpReduce : MonoBehaviour
 	//îöî≠ÇÃPrefabÇêÈåæ
 	[SerializeField] GameObject explosionPrefab;
 	[SerializeField] private AudioClip SE;
-	public AudioSource audioSource;
+	[SerializeField] private AudioSource audioSource;
+
 	//[SerializeField] AudioClip se;
 	//Å@ìGÇÃMaxHP
 	[SerializeField]
@@ -47,12 +48,14 @@ public class HpReduce : MonoBehaviour
 		}
 
 	}
-	private void PlaySE(AudioClip clip)
+
+	public void PlaySE(AudioClip clip)
 	{
-		if (audioSource != null && clip != null)
+		if (audioSource != null && audioSource.enabled && audioSource.gameObject.activeInHierarchy && clip != null)
 		{
 			audioSource.PlayOneShot(clip);
 		}
 	}
+
 
 }

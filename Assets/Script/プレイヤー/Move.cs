@@ -17,6 +17,9 @@ public class Move : MonoBehaviour
 	private Transform tf;
 	// アニメーション
 	private Animator animator;
+	// SE
+	[SerializeField] private AudioClip SE;
+	public AudioSource audioSource;
 	// 左右移動
 	private float horizontal = 0;
 	private float vertical = 0;
@@ -105,8 +108,17 @@ public class Move : MonoBehaviour
 			//Rigidbodyに上方向にJumpPowerの力を加え
 			rb.AddForce(transform.up * jumpPower);
 			GameObject Jump = Instantiate(jumpPrefab, transform.position, Quaternion.identity);
+			PlaySE(SE);
 			Destroy(Jump, 2.0f); //2秒後に削除
 			jumpCount++;    //jumpCount をインクリメント
+		}
+	}
+
+	private void PlaySE(AudioClip clip)
+	{
+		if (audioSource != null && clip != null)
+		{
+			audioSource.PlayOneShot(clip);
 		}
 	}
 

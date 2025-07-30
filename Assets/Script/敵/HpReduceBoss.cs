@@ -73,5 +73,4 @@ public class HpReduceBoss : MonoBehaviour
 			audioSource.PlayOneShot(clip);
 		}
 	}
-
 }
