@@ -2423,7 +2423,7 @@ MonoBehaviour:
   m_OnValueChanged:
     m_PersistentCalls:
       m_Calls:
-      - m_Target: {fileID: 7040518439443378379}
+      - m_Target: {fileID: 0}
         m_TargetAssemblyTypeName: Audio, Assembly-CSharp
         m_MethodName: SetSE
         m_Mode: 0
@@ -6426,7 +6426,8 @@ PrefabInstance:
       propertyPath: m_IsActive
       value: 1
       objectReference: {fileID: 0}
-    m_RemovedComponents: []
+    m_RemovedComponents:
+    - {fileID: 1759579333449427641, guid: f049328ec91d5814b9a70d807fd0a1ea, type: 3}
     m_RemovedGameObjects: []
     m_AddedGameObjects: []
     m_AddedComponents: []
@@ -8380,7 +8381,7 @@ MonoBehaviour:
   m_OnValueChanged:
     m_PersistentCalls:
       m_Calls:
-      - m_Target: {fileID: 7040518439443378379}
+      - m_Target: {fileID: 0}
         m_TargetAssemblyTypeName: Audio, Assembly-CSharp
         m_MethodName: SetBGM
         m_Mode: 0
@@ -9964,7 +9965,7 @@ MonoBehaviour:
       m_Calls:
       - m_Target: {fileID: 1208800162}
         m_TargetAssemblyTypeName: Title, Assembly-CSharp
-        m_MethodName: FadeAndLoadScene
+        m_MethodName: change_button
         m_Mode: 1
         m_Arguments:
           m_ObjectArgument: {fileID: 0}
@@ -11612,17 +11613,6 @@ PrefabInstance:
     m_AddedGameObjects: []
     m_AddedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 05d05244544792446b6106b27d3ddad2, type: 3}
---- !u!114 &7040518439443378379 stripped
-MonoBehaviour:
-  m_CorrespondingSourceObject: {fileID: 3951061626568829283, guid: 05d05244544792446b6106b27d3ddad2, type: 3}
-  m_PrefabInstance: {fileID: 7040518439443378378}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 0}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 04f3732a149570e48a49631681eae565, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
 --- !u!1001 &7045846213409646851
 PrefabInstance:
   m_ObjectHideFlags: 0

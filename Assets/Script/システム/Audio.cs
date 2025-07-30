@@ -16,6 +16,7 @@ public class Audio : MonoBehaviour
 
 	private void Start()
 	{
+
 		//ミキサーのvolumeにスライダーのvolumeを入れてます。
 
 		//BGM

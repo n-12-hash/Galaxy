@@ -118,10 +118,10 @@ GameObject:
   - component: {fileID: 5958100389167718637}
   - component: {fileID: 9125805628636730170}
   - component: {fileID: 5279442583910431427}
-  - component: {fileID: 1759579333449427641}
   - component: {fileID: 149683089718679990}
   - component: {fileID: 1747007587102570494}
   - component: {fileID: 5834731243250247498}
+  - component: {fileID: 4575195420575056632}
   m_Layer: 0
   m_Name: Goal
   m_TagString: Goal
@@ -243,20 +243,6 @@ MeshCollider:
   m_Convex: 0
   m_CookingOptions: 30
   m_Mesh: {fileID: 4300000, guid: 4bffff855c108e34c83d8605893f4c51, type: 3}
---- !u!114 &1759579333449427641
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 7720105628117877993}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: f0f0622c70f199245b9c2ee0858d5c50, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  SE: {fileID: 8300000, guid: f8107cc093c9f99479e90109a1c4cebd, type: 3}
-  audioSource: {fileID: 5834731243250247498}
 --- !u!65 &149683089718679990
 BoxCollider:
   m_ObjectHideFlags: 0
@@ -386,6 +372,18 @@ AudioSource:
     m_PreInfinity: 2
     m_PostInfinity: 2
     m_RotationOrder: 4
+--- !u!114 &4575195420575056632
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 7720105628117877993}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 3c8be84b1fd0d1b45a72230338f58f0a, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!1 &7917438078108059120
 GameObject:
   m_ObjectHideFlags: 0
