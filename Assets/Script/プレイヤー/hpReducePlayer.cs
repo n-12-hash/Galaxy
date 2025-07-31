@@ -1,65 +1,46 @@
-using System.Collections;
-using System.Collections.Generic;
 using UnityEngine;
-using UnityEngine.Audio;
-using UnityEngine.EventSystems;
-using UnityEngine.SceneManagement;
 using UnityEngine.UI;
+using UnityEngine.SceneManagement;
+using System.Collections;
 
-public class HpReducePlayer: MonoBehaviour
+public class HpReducePlayer : MonoBehaviour
 {
-	//コライダーをオンオフするためのBoxCollider
 	SphereCollider Muteki;
-	//爆発のPrefabを宣言
 	[SerializeField] GameObject explosionPrefab;
 	[SerializeField] private AudioClip DamageSE;
 	[SerializeField] private AudioClip SE;
 	public AudioSource audioSource;
-	//　自分のMaxHP
-	[SerializeField]
-	private int maxHp;
-	//　自分のHP
-	[SerializeField]
-	private int hp;
-	//　HP表示用UI
-	[SerializeField]
-	private GameObject HPUI;
-	//　HP表示用スライダー
+	[SerializeField] private int maxHp;
+	[SerializeField] private int hp;
+	[SerializeField] private GameObject HPUI;
 	private Slider hpSlider;
-	// フェード
-	public Image fadePanel;      // フェード用のUIパネル（Image）
-	public float fadeDuration;   // フェードの完了にかかる時間
+	public Image fadePanel;
+	public float fadeDuration;
+
 	private bool isInvincible = false;
+	private Animator animator;
 	Renderer[] renderers;
 
-	private void Start()
+	void Start()
 	{
+		animator = GetComponent<Animator>();
 		renderers = GetComponentsInChildren<Renderer>();
-
 		hp = maxHp;
 		hpSlider = HPUI.transform.Find("HPBar").GetComponent<Slider>();
 		hpSlider.value = 1f;
-
 		fadePanel.enabled = false;
-		Color c = fadePanel.color;
-		c.a = 0f;
-		fadePanel.color = c;
+		var c = fadePanel.color; c.a = 0f; fadePanel.color = c;
 	}
 
-
-	public void SetHp(int hp)
+	void OnTriggerExit(Collider col)
 	{
-		this.hp = hp;
-	}
-	void OnTriggerExit(Collider Collision)
-	{
-		if (Collision.gameObject.tag == "EnemyBullet" && !isInvincible)
+		if (col.gameObject.tag == "EnemyBullet" && !isInvincible)
 		{
+			// ダメージ処理
 			hp -= 10;
 			hpSlider.value = hp / (float)maxHp;
-			Debug.Log("当たった" + hpSlider.value);
 			PlaySE(DamageSE);
-			Destroy(Collision.gameObject);
+			Destroy(col.gameObject);
 			StartCoroutine(DamageBlink());
 			StartCoroutine(InvincibilityCoroutine());
 		}
@@ -67,62 +48,48 @@ public class HpReducePlayer: MonoBehaviour
 		if (hp <= 0)
 		{
 			PlaySE(SE);
-			GameObject explosion = Instantiate(explosionPrefab, transform.position, Quaternion.identity);
-			Destroy(explosion, 2.0f);
+			Instantiate(explosionPrefab, transform.position, Quaternion.identity);
 			StartCoroutine(FadeOutAndLoadScene());
 		}
 	}
 
-
 	private void PlaySE(AudioClip clip)
 	{
-		if (audioSource != null && clip != null)
-		{
-			audioSource.PlayOneShot(clip);
-		}
+		if (audioSource != null && clip != null) audioSource.PlayOneShot(clip);
 	}
 
 	private IEnumerator InvincibilityCoroutine()
 	{
 		isInvincible = true;
-		yield return new WaitForSeconds(2.0f); // 無敵時間を2秒に設定
+		yield return new WaitForSeconds(2f);
 		isInvincible = false;
 	}
 
-
 	public IEnumerator DamageBlink()
 	{
-		float blinkInterval = 0.1f; // 点滅間隔
-		int blinkCount = 10; // 点滅回数
+		float blinkInterval = 0.1f;
+		int blinkCount = 10;
 		for (int i = 0; i < blinkCount * 2; i++)
 		{
-			foreach (Renderer renderer in renderers)
-			{
-				renderer.enabled = !renderer.enabled;
-			}
+			foreach (var r in renderers) r.enabled = !r.enabled;
 			yield return new WaitForSeconds(blinkInterval);
 		}
 	}
 
 	public IEnumerator FadeOutAndLoadScene()
 	{
-		fadePanel.enabled = true;                 // パネルを有効化
-		float elapsedTime = 0.0f;                 // 経過時間を初期化
-		Color startColor = fadePanel.color;       // フェードパネルの開始色を取得
-		Color endColor = new Color(startColor.r, startColor.g, startColor.b, 1.0f); // フェードパネルの最終色を設定
-
-		// フェードアウトアニメーションを実行
-		while (elapsedTime < fadeDuration)
+		fadePanel.enabled = true;
+		float elapsed = 0f;
+		Color startC = fadePanel.color;
+		Color endC = new(startC.r, startC.g, startC.b, 1f);
+		while (elapsed < fadeDuration)
 		{
-			elapsedTime += Time.deltaTime;                        // 経過時間を増やす
-			float t = Mathf.Clamp01(elapsedTime / fadeDuration);  // フェードの進行度を計算
-			fadePanel.color = Color.Lerp(startColor, endColor, t); // パネルの色を変更してフェードアウト
-			yield return null;                                     // 1フレーム待機
+			elapsed += Time.deltaTime;
+			float t = Mathf.Clamp01(elapsed / fadeDuration);
+			fadePanel.color = Color.Lerp(startC, endC, t);
+			yield return null;
 		}
-
-		fadePanel.color = endColor;  // フェードが完了したら最終色に設定
 		SceneController.CurrentSceneName();
 		SceneManager.LoadScene("GameOver");
 	}
 }
-

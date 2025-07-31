@@ -4,38 +4,50 @@ public class Shoot : MonoBehaviour
 {
 	[SerializeField] private AudioClip shootSE;
 	public AudioSource audioSource;
-	public GameObject PistolBullet; // 弾
-	public float bulletSpeed = 500f; // 弾の速度
+	public GameObject PistolBullet;
+	public float bulletSpeed = 500f;
 
-	private float fireRate = 0.2f;   // 発射間隔（秒）
-	private float nextFireTime = 0f; // 次に発射できる時間
+	private float fireRate = 0.2f;
+	private float nextFireTime = 0f;
+
+	private Animator playerAnimator;
+
+	void Start()
+	{
+		// PlayerのAnimatorを取得
+		GameObject player = GameObject.FindWithTag("Player");
+		if (player != null)
+		{
+			playerAnimator = player.GetComponent<Animator>();
+		}
+	}
 
 	void Update()
 	{
-		// ボタンを押し続けている間、発射処理を繰り返す
-		if (Input.GetKeyDown(KeyCode.JoystickButton4) || Input.GetKeyDown(KeyCode.JoystickButton5))
+		// 発砲制限（特定のアニメーション中は無効）
+		if (playerAnimator != null)
 		{
-			if (Time.time >= nextFireTime && !Pause.isPaused)
+			var animState = playerAnimator.GetCurrentAnimatorStateInfo(0);
+			if (animState.IsName("anim_open") || animState.IsName("anim_open_GoToRoll"))
 			{
-				PlayerShoot();
-				nextFireTime = Time.time + fireRate;
+				return; // アニメーション中なので発砲しない
 			}
+		}
+
+		// 発砲処理
+		if ((Input.GetKeyDown(KeyCode.JoystickButton4) || Input.GetKeyDown(KeyCode.JoystickButton5)) && Time.time >= nextFireTime && !Pause.isPaused)
+		{
+			PlayerShoot();
+			nextFireTime = Time.time + fireRate;
 		}
 	}
 
 	void PlayerShoot()
 	{
-		// 弾を生成
 		GameObject newBullet = Instantiate(PistolBullet, transform.position, Quaternion.identity);
 		Rigidbody rb = newBullet.GetComponent<Rigidbody>();
-
-		// 弾をキャラの前方へ飛ばす
 		rb.AddForce(transform.forward * bulletSpeed);
-
-		// 発射音
 		PlaySE(shootSE);
-
-		// 3秒後に弾を削除
 		Destroy(newBullet, 3f);
 	}
 
@@ -47,3 +59,4 @@ public class Shoot : MonoBehaviour
 		}
 	}
 }
+

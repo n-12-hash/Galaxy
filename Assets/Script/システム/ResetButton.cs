@@ -15,21 +15,21 @@ public class ResetButton : MonoBehaviour
 			resetButton.onClick.AddListener(OnResetClicked);
 	}
 
-	void OnResetClicked()
+
+	public void OnResetClicked()
 	{
 		PlaySE(SE);
-		// 全ステージ解放データを削除
-		PlayerPrefs.DeleteKey("MAX_UNLOCKED_STAGE");
-		// スコア保存もリセットしたいなら
-		PlayerPrefs.DeleteKey("SCORE");
-		PlayerPrefs.Save();  // 念のため保存
-		Debug.Log("セーブデータをリセットしました");
 
-		// 任意のシーンへ移動
+		PlayerPrefs.DeleteAll();  // 全データをリセット
+		PlayerPrefs.Save();
+
+		Debug.Log("PlayerPrefs: 全データをリセットしました");
+
 		SceneManager.LoadScene(sceneToReload);
 	}
 
-	private void PlaySE(AudioClip clip)
+
+private void PlaySE(AudioClip clip)
 	{
 		if (audioSource != null && clip != null)
 		{
