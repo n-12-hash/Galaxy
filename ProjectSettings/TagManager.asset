@@ -10,7 +10,9 @@ TagManager:
   - Enemy
   - EnemyBullet
   - Turret
-  - tama
+  - Wall
+  - Goal
+  - Collectible
   layers:
   - Default
   - TransparentFX

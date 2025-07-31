@@ -166,9 +166,9 @@ AudioSource:
   m_GameObject: {fileID: 1261242027888998526}
   m_Enabled: 1
   serializedVersion: 4
-  OutputAudioMixerGroup: {fileID: 0}
+  OutputAudioMixerGroup: {fileID: 6759572087415909571, guid: dd0e79cd9bb766a4990d2dae892a6819, type: 2}
   m_audioClip: {fileID: 0}
-  m_PlayOnAwake: 1
+  m_PlayOnAwake: 0
   m_Volume: 1
   m_Pitch: 1
   Loop: 0
@@ -432,8 +432,8 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 3159759006641996000}
-  - component: {fileID: 8895365791523141286}
   - component: {fileID: 2349426864302962810}
+  - component: {fileID: 4252060436171506589}
   m_Layer: 0
   m_Name: senser
   m_TagString: Untagged
@@ -450,14 +450,27 @@ Transform:
   m_GameObject: {fileID: 7181792505542957877}
   serializedVersion: 2
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 0, y: 0, z: 0}
-  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_LocalPosition: {x: 0, y: -0.5, z: 0}
+  m_LocalScale: {x: 4, y: 1, z: 2}
   m_ConstrainProportionsScale: 0
   m_Children: []
   m_Father: {fileID: 7355939109575723909}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
---- !u!136 &8895365791523141286
-CapsuleCollider:
+--- !u!114 &2349426864302962810
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 7181792505542957877}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: b0f77f4b708de0f41a41d29ce501c1a7, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  ShootPoint: {fileID: 1261242027888998526}
+--- !u!65 &4252060436171506589
+BoxCollider:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInstance: {fileID: 0}
@@ -474,24 +487,9 @@ CapsuleCollider:
   m_IsTrigger: 1
   m_ProvidesContacts: 0
   m_Enabled: 1
-  serializedVersion: 2
-  m_Radius: 1
-  m_Height: 2
-  m_Direction: 1
-  m_Center: {x: 0, y: 0, z: 0}
---- !u!114 &2349426864302962810
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 7181792505542957877}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: b0f77f4b708de0f41a41d29ce501c1a7, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  ShootPoint: {fileID: 1261242027888998526}
+  serializedVersion: 3
+  m_Size: {x: 1, y: 0, z: 2}
+  m_Center: {x: 0, y: -0.5, z: 0}
 --- !u!1 &7574224483219943042
 GameObject:
   m_ObjectHideFlags: 0
@@ -747,11 +745,11 @@ NavMeshAgent:
   m_Enabled: 1
   m_AgentTypeID: 0
   m_Radius: 0.5
-  m_Speed: 10
+  m_Speed: 3
   m_Acceleration: 8
   avoidancePriority: 50
   m_AngularSpeed: 120
-  m_StoppingDistance: 0
+  m_StoppingDistance: 10
   m_AutoTraverseOffMeshLink: 0
   m_AutoBraking: 0
   m_AutoRepath: 0
@@ -776,7 +774,7 @@ MonoBehaviour:
   audioSource: {fileID: 5560233734118346657}
   maxHp: 10
   hp: 10
-  HPUI: {fileID: 7574224483219943042}
+  HPUI: {fileID: 321000765650681636}
   hpSlider: {fileID: 2108720301566260450}
 --- !u!82 &5560233734118346657
 AudioSource:

@@ -29,7 +29,7 @@ public class HpReducePlayer: MonoBehaviour
 	// フェード
 	public Image fadePanel;      // フェード用のUIパネル（Image）
 	public float fadeDuration;   // フェードの完了にかかる時間
-
+	private bool isInvincible = false;
 	Renderer[] renderers;
 
 	private void Start()
@@ -53,25 +53,26 @@ public class HpReducePlayer: MonoBehaviour
 	}
 	void OnTriggerExit(Collider Collision)
 	{
-		if (Collision.gameObject.tag == "EnemyBullet"){
+		if (Collision.gameObject.tag == "EnemyBullet" && !isInvincible)
+		{
 			hp -= 10;
 			hpSlider.value = hp / (float)maxHp;
 			Debug.Log("当たった" + hpSlider.value);
 			PlaySE(DamageSE);
 			Destroy(Collision.gameObject);
 			StartCoroutine(DamageBlink());
-			/*//当たり判定オフ
-			Muteki.enabled = false;*/
+			StartCoroutine(InvincibilityCoroutine());
 		}
 
 		if (hp <= 0)
 		{
-			PlaySE(SE);//爆発させる
+			PlaySE(SE);
 			GameObject explosion = Instantiate(explosionPrefab, transform.position, Quaternion.identity);
-			Destroy(explosion, 2.0f); //2秒後に爆発を削除
+			Destroy(explosion, 2.0f);
 			StartCoroutine(FadeOutAndLoadScene());
 		}
 	}
+
 
 	private void PlaySE(AudioClip clip)
 	{
@@ -80,6 +81,14 @@ public class HpReducePlayer: MonoBehaviour
 			audioSource.PlayOneShot(clip);
 		}
 	}
+
+	private IEnumerator InvincibilityCoroutine()
+	{
+		isInvincible = true;
+		yield return new WaitForSeconds(2.0f); // 無敵時間を2秒に設定
+		isInvincible = false;
+	}
+
 
 	public IEnumerator DamageBlink()
 	{

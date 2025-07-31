@@ -73,7 +73,7 @@ MonoBehaviour:
   audioSource: {fileID: 980350301002307726}
   fireRate: 0.7
   nextFireTime: 0
-  bulletSpeed: 500
+  bulletSpeed: 100
   Target: {fileID: 0}
 --- !u!82 &980350301002307726
 AudioSource:
@@ -747,8 +747,8 @@ BoxCollider:
   m_ProvidesContacts: 0
   m_Enabled: 1
   serializedVersion: 3
-  m_Size: {x: 3.5754952, y: 3.3034472, z: 3.9624016}
-  m_Center: {x: -0.000000059604645, y: 0.1767767, z: 0.00000011920929}
+  m_Size: {x: 10, y: 10, z: 5}
+  m_Center: {x: 0, y: 0, z: 0}
 --- !u!114 &6100346992546995094
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -764,10 +764,10 @@ MonoBehaviour:
   explosionPrefab: {fileID: 3165994479373110667, guid: 69383ecd45ef8ef45af5639441d07a67, type: 3}
   SE: {fileID: 8300000, guid: 493d3db62b6b2f74e90e5d582e56af44, type: 3}
   audioSource: {fileID: 8504835901494967067}
-  maxHp: 1000
-  hp: 0
+  maxHp: 200
+  hp: 200
   HPUI: {fileID: 535377281198704652}
-  goal: {fileID: 0}
+  goal: {fileID: 7720105628117877993, guid: f049328ec91d5814b9a70d807fd0a1ea, type: 3}
 --- !u!82 &8504835901494967067
 AudioSource:
   m_ObjectHideFlags: 0

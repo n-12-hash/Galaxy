@@ -53,8 +53,9 @@ MonoBehaviour:
   SE: {fileID: 8300000, guid: 493d3db62b6b2f74e90e5d582e56af44, type: 3}
   audioSource: {fileID: 8126252720296387862}
   maxHp: 30
-  hp: 0
+  hp: 30
   HPUI: {fileID: 7259715301953743222}
+  hpSlider: {fileID: 0}
 --- !u!65 &8950246863984904171
 BoxCollider:
   m_ObjectHideFlags: 0

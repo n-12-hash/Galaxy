@@ -1,65 +1,45 @@
-using System.Collections;
-using System.Collections.Generic;
-using Unity.VisualScripting;
 using UnityEngine;
-using UnityEngine.UI;
-using static UnityEditorInternal.ReorderableList;
 
 public class Shoot : MonoBehaviour
 {
-
-	private Animator animator;  // アニメーション
 	[SerializeField] private AudioClip shootSE;
 	public AudioSource audioSource;
 	public GameObject PistolBullet; // 弾
-	public float bulletSpeed; //弾の速度
-	private float fireRate = 0.5f;   // 発射間隔
-	private float nextFireTime = 5.0f; // 次に発射できる時間
-	Move script; //参照するスクリプト
+	public float bulletSpeed = 500f; // 弾の速度
 
-	/*private void Start()
-	{
-		if (volumeSlider != null)
-		{
-			volumeSlider.onValueChanged.AddListener((value) =>
-			{
-				// valueは0～1の値を期待する。それを保証するための処理
-				value = Mathf.Clamp01(value);
-
-				float decibel = 20f * Mathf.Log10(value);
-				decibel = Mathf.Clamp(decibel, -80f, 0f);
-				audioMixer.SetFloat(audioSource, decibel);
-			});
-		}
-	}*/
+	private float fireRate = 0.2f;   // 発射間隔（秒）
+	private float nextFireTime = 0f; // 次に発射できる時間
 
 	void Update()
 	{
-		if (/*animator.SetBool("Walk_Anim", true) &&*/ Input.GetKeyDown(KeyCode.JoystickButton4) || Input.GetKeyDown(KeyCode.JoystickButton5))
+		// ボタンを押し続けている間、発射処理を繰り返す
+		if (Input.GetKeyDown(KeyCode.JoystickButton4) || Input.GetKeyDown(KeyCode.JoystickButton5))
 		{
-			PlayerShoot();
-			nextFireTime = Time.time + 1f / fireRate;
+			if (Time.time >= nextFireTime && !Pause.isPaused)
+			{
+				PlayerShoot();
+				nextFireTime = Time.time + fireRate;
+			}
 		}
-
 	}
 
 	void PlayerShoot()
 	{
+		// 弾を生成
+		GameObject newBullet = Instantiate(PistolBullet, transform.position, Quaternion.identity);
+		Rigidbody rb = newBullet.GetComponent<Rigidbody>();
 
-		if (Pause.isPaused) return; // ポーズ中は何もしない
+		// 弾をキャラの前方へ飛ばす
+		rb.AddForce(transform.forward * bulletSpeed);
 
-		//弾を生成
-		GameObject newbullet = Instantiate(PistolBullet, this.transform.position, Quaternion.identity);
-		Rigidbody bulletRigidbody = newbullet.GetComponent<Rigidbody>();
-		//キャラクターが向いている方向に弾に力を加える	
-		bulletRigidbody.AddForce(this.transform.forward * bulletSpeed);
-		// 発射音を出す
+		// 発射音
 		PlaySE(shootSE);
-		//3秒後に弾を消す
-		Destroy(newbullet, 3);
+
+		// 3秒後に弾を削除
+		Destroy(newBullet, 3f);
 	}
 
-	private void PlaySE(AudioClip clip)
+	void PlaySE(AudioClip clip)
 	{
 		if (audioSource != null && clip != null)
 		{

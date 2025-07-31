@@ -649,8 +649,16 @@ PrefabInstance:
       value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 189518374531647156, guid: 0870e63a71ce02d4db3e6bf92e07b8a5, type: 3}
+      propertyPath: m_Size.y
+      value: 2.203329
+      objectReference: {fileID: 0}
+    - target: {fileID: 189518374531647156, guid: 0870e63a71ce02d4db3e6bf92e07b8a5, type: 3}
       propertyPath: m_Size.z
       value: 5.6170626
+      objectReference: {fileID: 0}
+    - target: {fileID: 189518374531647156, guid: 0870e63a71ce02d4db3e6bf92e07b8a5, type: 3}
+      propertyPath: m_Center.y
+      value: 1.471775
       objectReference: {fileID: 0}
     - target: {fileID: 189518374531647156, guid: 0870e63a71ce02d4db3e6bf92e07b8a5, type: 3}
       propertyPath: m_Center.z
@@ -719,6 +727,10 @@ PrefabInstance:
     - target: {fileID: 1100815829268679316, guid: 93721b6bd1c02f4428608a31923c43ba, type: 3}
       propertyPath: m_IsActive
       value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 1100815829268679316, guid: 93721b6bd1c02f4428608a31923c43ba, type: 3}
+      propertyPath: m_TagString
+      value: Plane
       objectReference: {fileID: 0}
     - target: {fileID: 8449043274780202931, guid: 93721b6bd1c02f4428608a31923c43ba, type: 3}
       propertyPath: m_LocalScale.y
@@ -795,6 +807,10 @@ PrefabInstance:
       propertyPath: m_IsActive
       value: 1
       objectReference: {fileID: 0}
+    - target: {fileID: 1100815829268679316, guid: 93721b6bd1c02f4428608a31923c43ba, type: 3}
+      propertyPath: m_TagString
+      value: Plane
+      objectReference: {fileID: 0}
     - target: {fileID: 8449043274780202931, guid: 93721b6bd1c02f4428608a31923c43ba, type: 3}
       propertyPath: m_LocalScale.y
       value: 1
@@ -869,6 +885,10 @@ PrefabInstance:
     - target: {fileID: 1100815829268679316, guid: 93721b6bd1c02f4428608a31923c43ba, type: 3}
       propertyPath: m_IsActive
       value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 1100815829268679316, guid: 93721b6bd1c02f4428608a31923c43ba, type: 3}
+      propertyPath: m_TagString
+      value: Plane
       objectReference: {fileID: 0}
     - target: {fileID: 8449043274780202931, guid: 93721b6bd1c02f4428608a31923c43ba, type: 3}
       propertyPath: m_LocalScale.y

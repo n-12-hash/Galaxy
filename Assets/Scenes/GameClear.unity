@@ -438,9 +438,9 @@ MonoBehaviour:
   m_OnClick:
     m_PersistentCalls:
       m_Calls:
-      - m_Target: {fileID: 1980277920}
-        m_TargetAssemblyTypeName: SceneController, Assembly-CSharp
-        m_MethodName: BackToBeforeScene
+      - m_Target: {fileID: 1980277926}
+        m_TargetAssemblyTypeName: NextStage, Assembly-CSharp
+        m_MethodName: LoadNextStage
         m_Mode: 1
         m_Arguments:
           m_ObjectArgument: {fileID: 0}
@@ -1447,6 +1447,9 @@ PrefabInstance:
     - targetCorrespondingSourceObject: {fileID: 847220589840695745, guid: 5f1d53d5cbd16164ea1b2bc185bb0ebb, type: 3}
       insertIndex: -1
       addedObject: {fileID: 1980277925}
+    - targetCorrespondingSourceObject: {fileID: 847220589840695745, guid: 5f1d53d5cbd16164ea1b2bc185bb0ebb, type: 3}
+      insertIndex: -1
+      addedObject: {fileID: 1980277926}
   m_SourcePrefab: {fileID: 100100000, guid: 5f1d53d5cbd16164ea1b2bc185bb0ebb, type: 3}
 --- !u!1 &1980277919 stripped
 GameObject:
@@ -1498,6 +1501,18 @@ MonoBehaviour:
   m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: b40a50df85ddbf9469eb83af514b4401, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+--- !u!114 &1980277926
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1980277919}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 817228504da434e4cb0b527f823a09c4, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
 --- !u!1001 &2103115100

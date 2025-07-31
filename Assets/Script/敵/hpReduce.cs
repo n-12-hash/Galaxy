@@ -49,10 +49,11 @@ public class HpReduce : MonoBehaviour
 		if (hp <= 0)
 		{
 			Debug.Log("1");
-			Destroy(gameObject); // このオブジェクトを消す
-			PlaySE(SE);
 			GameObject explosion = Instantiate(explosionPrefab, transform.position, Quaternion.identity);
-			Destroy(explosion, 2.0f); //2秒後に爆発を削除
+			var expAudio = explosion.AddComponent<AudioSource>();
+			expAudio.PlayOneShot(SE);
+			// explosion に AutoDestroy スクリプトを付けて数秒後に破棄
+			Destroy(gameObject); // 敵はあとから破棄
 
 		}
 
