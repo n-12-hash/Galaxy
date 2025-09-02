@@ -53,6 +53,8 @@ public class Move : MonoBehaviour
 
 
 
+
+
 	bool IsInRollLoop()
 	{
 		return animator.GetCurrentAnimatorStateInfo(0).IsName("anim_closed_Roll_Loop");
@@ -61,6 +63,7 @@ public class Move : MonoBehaviour
 	// Update is called once per frame
 	void Update()
     {
+
 		if (Pause.isPaused) return;
 
 		// anim_open‚ªÄ¶’†‚È‚çA‘€ì‚ğ–³Œø‚É‚·‚é
