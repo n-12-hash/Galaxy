@@ -11,7 +11,7 @@ public class PlayerItemTrigger : MonoBehaviour
 	{
 		if (other.CompareTag("Collectible"))
 		{
-			CollectibleManager.Instance.Collect(other.gameObject);
+			//CollectibleManager.Instance.Collect(other.gameObject);
 			PlaySE(SE);
 		}
 	}
