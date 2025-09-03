@@ -6,21 +6,14 @@ using UnityEngine.UI;
 
 public class Goal : MonoBehaviour
 {
+
 	// フェード
-	/*public Image fadePanel;      // フェード用のUIパネル（Image）
-	public float fadeDuration;   // フェードの完了にかかる時間*/
+	public Image fadePanel;      // フェード用のUIパネル（Image）
+	public float fadeDuration;   // フェードの完了にかかる時間
 
-
-	// Start is called before the first frame update
-	void Start()
-    {
-		// ゲーム開始時は非表示
-		gameObject.SetActive(false);
-	}
-
-	/*void OnTriggerExit(Collider Collision)
+	void OnTriggerEnter(Collider collision)
 	{
-		if (Collision.gameObject.gameObject.tag == "Player")
+		if (collision.gameObject.CompareTag("Player"))
 		{
 			StartCoroutine(FadeOutAndLoadScene());
 		}
@@ -44,6 +37,7 @@ public class Goal : MonoBehaviour
 
 		fadePanel.color = endColor;  // フェードが完了したら最終色に設定
 		SceneController.CurrentSceneName();
-		SceneManager.LoadScene("GameClear");
-	}*/
+		SceneManager.LoadScene("Boss");
+	}
 }
+
