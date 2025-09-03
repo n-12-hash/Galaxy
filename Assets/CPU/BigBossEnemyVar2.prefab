@@ -764,8 +764,8 @@ MonoBehaviour:
   explosionPrefab: {fileID: 3165994479373110667, guid: 69383ecd45ef8ef45af5639441d07a67, type: 3}
   SE: {fileID: 8300000, guid: 493d3db62b6b2f74e90e5d582e56af44, type: 3}
   audioSource: {fileID: 611140284521853633}
-  maxHp: 1000
-  hp: 1000
+  maxHp: 500
+  hp: 500
   HPUI: {fileID: 1557349268213250800}
   goal: {fileID: 0}
 --- !u!82 &611140284521853633
