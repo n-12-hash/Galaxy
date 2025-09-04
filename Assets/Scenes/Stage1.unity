@@ -5460,7 +5460,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 9076049148163520029, guid: 8554c6b58eef1cc419a22266c8529f1d, type: 3}
       propertyPath: m_LocalPosition.z
-      value: 203.05771
+      value: 197.4
       objectReference: {fileID: 0}
     - target: {fileID: 9076049148163520029, guid: 8554c6b58eef1cc419a22266c8529f1d, type: 3}
       propertyPath: m_LocalRotation.w
@@ -7148,6 +7148,10 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 957c75fbf4fb7e84eb77bcacd9886348, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  SE: {fileID: 0}
+  audioSource: {fileID: 0}
+  fadePanel: {fileID: 0}
+  fadeDuration: 0
 --- !u!82 &1208800170
 AudioSource:
   m_ObjectHideFlags: 0
@@ -8904,7 +8908,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 9076049148163520029, guid: 8554c6b58eef1cc419a22266c8529f1d, type: 3}
       propertyPath: m_LocalPosition.z
-      value: 189.19545
+      value: 180.6
       objectReference: {fileID: 0}
     - target: {fileID: 9076049148163520029, guid: 8554c6b58eef1cc419a22266c8529f1d, type: 3}
       propertyPath: m_LocalRotation.w

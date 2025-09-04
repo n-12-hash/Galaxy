@@ -140,6 +140,10 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 957c75fbf4fb7e84eb77bcacd9886348, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  SE: {fileID: 0}
+  audioSource: {fileID: 0}
+  fadePanel: {fileID: 0}
+  fadeDuration: 0
 --- !u!114 &260899904
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -704,11 +708,11 @@ AudioSource:
   m_Enabled: 1
   serializedVersion: 4
   OutputAudioMixerGroup: {fileID: 0}
-  m_audioClip: {fileID: 8300000, guid: 10ecdf39ef2a2ba4289611a379c34854, type: 3}
+  m_audioClip: {fileID: 8300000, guid: 4458172fdb941c44495cae60b8df7753, type: 3}
   m_PlayOnAwake: 1
   m_Volume: 1
   m_Pitch: 1
-  Loop: 0
+  Loop: 1
   Mute: 0
   Spatialize: 0
   SpatializePostEffects: 0
@@ -1011,7 +1015,9 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 1518195735695329723, guid: 31b5e57f0b3ee7548aef124aaf40f943, type: 3}
       propertyPath: m_text
-      value: "GAME\u3000CLEAR"
+      value: 'Stage Select
+
+'
       objectReference: {fileID: 0}
     - target: {fileID: 1518195735695329723, guid: 31b5e57f0b3ee7548aef124aaf40f943, type: 3}
       propertyPath: m_fontSize
@@ -1067,7 +1073,7 @@ PrefabInstance:
       objectReference: {fileID: 1980277924}
     - target: {fileID: 2907130192827269367, guid: 31b5e57f0b3ee7548aef124aaf40f943, type: 3}
       propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[0].m_MethodName
-      value: change_button
+      value: FadeAndLoadScene
       objectReference: {fileID: 0}
     - target: {fileID: 3380097724294938929, guid: 31b5e57f0b3ee7548aef124aaf40f943, type: 3}
       propertyPath: m_AnchoredPosition.y
@@ -1163,7 +1169,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 6651721396505139405, guid: 31b5e57f0b3ee7548aef124aaf40f943, type: 3}
       propertyPath: m_Name
-      value: GameClear
+      value: Stage Select
       objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects:
@@ -1746,9 +1752,6 @@ PrefabInstance:
       addedObject: {fileID: 1980277930}
     - targetCorrespondingSourceObject: {fileID: 847220589840695745, guid: 5f1d53d5cbd16164ea1b2bc185bb0ebb, type: 3}
       insertIndex: -1
-      addedObject: {fileID: 1980277929}
-    - targetCorrespondingSourceObject: {fileID: 847220589840695745, guid: 5f1d53d5cbd16164ea1b2bc185bb0ebb, type: 3}
-      insertIndex: -1
       addedObject: {fileID: 1980277928}
     - targetCorrespondingSourceObject: {fileID: 847220589840695745, guid: 5f1d53d5cbd16164ea1b2bc185bb0ebb, type: 3}
       insertIndex: -1
@@ -1756,6 +1759,9 @@ PrefabInstance:
     - targetCorrespondingSourceObject: {fileID: 847220589840695745, guid: 5f1d53d5cbd16164ea1b2bc185bb0ebb, type: 3}
       insertIndex: -1
       addedObject: {fileID: 1980277931}
+    - targetCorrespondingSourceObject: {fileID: 847220589840695745, guid: 5f1d53d5cbd16164ea1b2bc185bb0ebb, type: 3}
+      insertIndex: -1
+      addedObject: {fileID: 1980277929}
   m_SourcePrefab: {fileID: 100100000, guid: 5f1d53d5cbd16164ea1b2bc185bb0ebb, type: 3}
 --- !u!1 &1980277919 stripped
 GameObject:
@@ -1797,6 +1803,10 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 957c75fbf4fb7e84eb77bcacd9886348, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  SE: {fileID: 8300000, guid: 488c714a386dca648843ec0c9a991efb, type: 3}
+  audioSource: {fileID: 1980277929}
+  fadePanel: {fileID: 851769783}
+  fadeDuration: 1
 --- !u!114 &1980277927
 MonoBehaviour:
   m_ObjectHideFlags: 0
