@@ -140,10 +140,10 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 957c75fbf4fb7e84eb77bcacd9886348, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  SE: {fileID: 0}
-  audioSource: {fileID: 0}
-  fadePanel: {fileID: 0}
-  fadeDuration: 0
+  SE: {fileID: 8300000, guid: 488c714a386dca648843ec0c9a991efb, type: 3}
+  audioSource: {fileID: 1980277929}
+  fadePanel: {fileID: 851769783}
+  fadeDuration: 1
 --- !u!114 &260899904
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -159,7 +159,6 @@ MonoBehaviour:
   stage1: {fileID: 281206626}
   stage2: {fileID: 1824843944}
   stage3: {fileID: 931576699}
-  stage4: {fileID: 0}
   stage5: {fileID: 1054501782}
 --- !u!1 &281206623
 GameObject:
@@ -1697,6 +1696,18 @@ PrefabInstance:
       propertyPath: m_Name
       value: ChangeScene
       objectReference: {fileID: 0}
+    - target: {fileID: 1365428557866149279, guid: 5f1d53d5cbd16164ea1b2bc185bb0ebb, type: 3}
+      propertyPath: SE
+      value: 
+      objectReference: {fileID: 8300000, guid: 488c714a386dca648843ec0c9a991efb, type: 3}
+    - target: {fileID: 1365428557866149279, guid: 5f1d53d5cbd16164ea1b2bc185bb0ebb, type: 3}
+      propertyPath: fadePanel
+      value: 
+      objectReference: {fileID: 851769783}
+    - target: {fileID: 1365428557866149279, guid: 5f1d53d5cbd16164ea1b2bc185bb0ebb, type: 3}
+      propertyPath: audioSource
+      value: 
+      objectReference: {fileID: 1980277929}
     - target: {fileID: 6149049053935221396, guid: 5f1d53d5cbd16164ea1b2bc185bb0ebb, type: 3}
       propertyPath: m_LocalPosition.x
       value: 143.84138
@@ -1756,9 +1767,6 @@ PrefabInstance:
     - targetCorrespondingSourceObject: {fileID: 847220589840695745, guid: 5f1d53d5cbd16164ea1b2bc185bb0ebb, type: 3}
       insertIndex: -1
       addedObject: {fileID: 1980277927}
-    - targetCorrespondingSourceObject: {fileID: 847220589840695745, guid: 5f1d53d5cbd16164ea1b2bc185bb0ebb, type: 3}
-      insertIndex: -1
-      addedObject: {fileID: 1980277931}
     - targetCorrespondingSourceObject: {fileID: 847220589840695745, guid: 5f1d53d5cbd16164ea1b2bc185bb0ebb, type: 3}
       insertIndex: -1
       addedObject: {fileID: 1980277929}
@@ -1951,19 +1959,6 @@ MonoBehaviour:
   audioSource: {fileID: 1980277929}
   fadePanel: {fileID: 851769783}
   fadeDuration: 3
---- !u!114 &1980277931
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 1980277919}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 3be1cce8e23385d4b926b6f3796b6e4a, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  hiddenStageButton: {fileID: 0}
 --- !u!1001 &2103115100
 PrefabInstance:
   m_ObjectHideFlags: 0

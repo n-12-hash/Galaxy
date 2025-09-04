@@ -140,10 +140,10 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 957c75fbf4fb7e84eb77bcacd9886348, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  SE: {fileID: 0}
-  audioSource: {fileID: 0}
-  fadePanel: {fileID: 0}
-  fadeDuration: 0
+  SE: {fileID: 8300000, guid: 488c714a386dca648843ec0c9a991efb, type: 3}
+  audioSource: {fileID: 856494086}
+  fadePanel: {fileID: 851769783}
+  fadeDuration: 1
 --- !u!1 &651701077 stripped
 GameObject:
   m_CorrespondingSourceObject: {fileID: 1632450931200454979, guid: 31b5e57f0b3ee7548aef124aaf40f943, type: 3}

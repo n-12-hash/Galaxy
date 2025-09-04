@@ -944,6 +944,18 @@ PrefabInstance:
       propertyPath: m_IsActive
       value: 1
       objectReference: {fileID: 0}
+    - target: {fileID: 1365428557866149279, guid: 5f1d53d5cbd16164ea1b2bc185bb0ebb, type: 3}
+      propertyPath: SE
+      value: 
+      objectReference: {fileID: 8300000, guid: 488c714a386dca648843ec0c9a991efb, type: 3}
+    - target: {fileID: 1365428557866149279, guid: 5f1d53d5cbd16164ea1b2bc185bb0ebb, type: 3}
+      propertyPath: fadePanel
+      value: 
+      objectReference: {fileID: 561263501}
+    - target: {fileID: 1365428557866149279, guid: 5f1d53d5cbd16164ea1b2bc185bb0ebb, type: 3}
+      propertyPath: audioSource
+      value: 
+      objectReference: {fileID: 1208800170}
     - target: {fileID: 2011252376489216654, guid: 5f1d53d5cbd16164ea1b2bc185bb0ebb, type: 3}
       propertyPath: fadePanel
       value: 
@@ -5223,9 +5235,9 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 957c75fbf4fb7e84eb77bcacd9886348, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  SE: {fileID: 0}
-  audioSource: {fileID: 0}
-  fadePanel: {fileID: 0}
+  SE: {fileID: 8300000, guid: 488c714a386dca648843ec0c9a991efb, type: 3}
+  audioSource: {fileID: 1208800170}
+  fadePanel: {fileID: 561263501}
   fadeDuration: 0
 --- !u!82 &1208800170
 AudioSource:

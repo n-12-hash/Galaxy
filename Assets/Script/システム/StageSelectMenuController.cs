@@ -8,7 +8,7 @@ public class StageSelectMenuController : MonoBehaviour
 	[SerializeField] private Button stage1;
 	[SerializeField] private Button stage2;
 	[SerializeField] private Button stage3;
-	[SerializeField] private Button stage4;
+
 	[SerializeField] private Button stage5;
 
 	private bool isProcessing = false;
@@ -19,7 +19,7 @@ public class StageSelectMenuController : MonoBehaviour
 		stage1.onClick.AddListener(OnStartButtonClicked);
 		stage2.onClick.AddListener(OnStartButtonClicked);
 		stage3.onClick.AddListener(OnStartButtonClicked);
-		stage4.onClick.AddListener(OnStartButtonClicked);
+
 		stage5.onClick.AddListener(OnStartButtonClicked);
 	}
 
@@ -33,7 +33,7 @@ public class StageSelectMenuController : MonoBehaviour
 		stage1.interactable = false; 
 		stage2.interactable = false; 
 		stage3.interactable = false; 
-		stage4.interactable = false; 
+		//stage4.interactable = false; 
 		stage5.interactable = false; 
 
 

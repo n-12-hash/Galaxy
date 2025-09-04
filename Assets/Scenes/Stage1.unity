@@ -668,6 +668,18 @@ PrefabInstance:
       propertyPath: m_IsActive
       value: 1
       objectReference: {fileID: 0}
+    - target: {fileID: 1365428557866149279, guid: 5f1d53d5cbd16164ea1b2bc185bb0ebb, type: 3}
+      propertyPath: SE
+      value: 
+      objectReference: {fileID: 8300000, guid: 488c714a386dca648843ec0c9a991efb, type: 3}
+    - target: {fileID: 1365428557866149279, guid: 5f1d53d5cbd16164ea1b2bc185bb0ebb, type: 3}
+      propertyPath: fadePanel
+      value: 
+      objectReference: {fileID: 561263501}
+    - target: {fileID: 1365428557866149279, guid: 5f1d53d5cbd16164ea1b2bc185bb0ebb, type: 3}
+      propertyPath: audioSource
+      value: 
+      objectReference: {fileID: 1208800170}
     - target: {fileID: 2011252376489216654, guid: 5f1d53d5cbd16164ea1b2bc185bb0ebb, type: 3}
       propertyPath: fadePanel
       value: 
@@ -7148,9 +7160,9 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 957c75fbf4fb7e84eb77bcacd9886348, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  SE: {fileID: 0}
-  audioSource: {fileID: 0}
-  fadePanel: {fileID: 0}
+  SE: {fileID: 8300000, guid: 488c714a386dca648843ec0c9a991efb, type: 3}
+  audioSource: {fileID: 1208800170}
+  fadePanel: {fileID: 561263501}
   fadeDuration: 0
 --- !u!82 &1208800170
 AudioSource:
@@ -8392,7 +8404,7 @@ Transform:
   m_GameObject: {fileID: 1536961130}
   serializedVersion: 2
   m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
-  m_LocalPosition: {x: 0, y: 210.6, z: 711.4001}
+  m_LocalPosition: {x: 0, y: 210.5, z: 711.4001}
   m_LocalScale: {x: 20, y: 1, z: 45.6456}
   m_ConstrainProportionsScale: 0
   m_Children: []
